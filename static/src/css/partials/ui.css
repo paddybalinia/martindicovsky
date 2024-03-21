@@ -1,0 +1,30 @@
+.row {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  position: relative;
+  width: 100%;
+}
+
+[data-lazyload] {
+  opacity: 0;
+}
+
+.button {
+  padding: 12px 30px 10px;
+  background: #1CD3C1;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font: bold 12px/12px "Roboto", sans-serif;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  margin: 0 auto;
+}
+.button--secondary {
+  background: #000;
+}
