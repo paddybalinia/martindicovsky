@@ -1,0 +1,95 @@
+.mod-testimonial {
+  padding: 30px 0;
+}
+
+.slide {
+  padding-top: 80px;
+}
+
+.aval {
+  background: white;
+  color: black;
+  border-radius: 5px;
+  padding: 0 25px 22px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.aval__figure {
+  border-radius: 125px;
+  border: 2px solid white;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translate(0, -50px);
+          transform: translate(0, -50px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.aval__figure img {
+  border-radius: 125px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.aval__svg {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+.aval__content {
+  padding-top: 65px;
+  line-height: 1.45rem;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+.aval__job {
+  font-size: 0.9rem;
+  color: #595959;
+  margin-top: 10px;
+}
+.aval__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px 0 0;
+  display: none;
+}
+.aval__button {
+  background: white;
+  border-radius: 125px;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2em;
+}

@@ -1,0 +1,100 @@
+@import '../vars.scss';
+
+.mod-programa {
+    padding: 30px 0;
+
+}
+
+.mod-steps {
+    display: flex;
+    flex-direction: column;
+    padding-top: 37px;
+    gap: 50px;
+
+    &__box {
+        border-top: 1px solid rgba(255, 255, 255, .4);
+        position: relative;
+
+        &:before {
+            content: '';
+            height: 1px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -1px;
+            background: white;
+            width: 65px;
+        }
+
+        &:after {
+            content: '';
+            height: 1px;
+            display: block;
+            position: absolute;
+            left: 65px;
+            top: -1px;
+            background: black;
+            width: 35px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 32px;
+
+    }
+
+    &__svg {
+        margin-right: 10px;
+        margin-left: auto;
+    }
+
+    &__numb {
+        flex: 0 0 100px;
+        text-indent: 10px;
+        font-size: 1.3rem;
+    }
+
+    &__title {
+        max-width: 100px;
+        font-size: 1.3rem;
+    }
+
+    &__content {
+        line-height: 1.7rem;
+        margin: 23px 0 0;
+    }
+
+    &__cta {
+        display: flex;
+        max-width: 182px;
+        height: 37px;
+        max-width: 182px;
+        height: 37px;
+        background: white;
+        color: black;
+        align-items: center;
+        justify-content: center;
+        border-radius: 125px;
+        gap: 4px;
+        margin: 51px 0 0;
+        transition: $transition;
+        border: 1px solid white;
+
+        &__arrow {
+            transform: rotate(45deg);
+            display: inline-block;
+            transition: all ease-out 0.1s;
+        }
+
+        &:hover {
+            background: black;
+            color: white;
+
+            .mod-steps__cta__arrow {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}

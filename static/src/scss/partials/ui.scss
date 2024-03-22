@@ -3,7 +3,7 @@
 .row {
     margin: 0 auto;
     max-width: $grid-width;
-    padding: 0 15px;
+    padding: 0 20px;
     position: relative;
     width: 100%;
 }
@@ -12,10 +12,40 @@
     opacity: 0;
 }
 
-.mod {
-    &__header {
+.ui-link {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: $color-secondary ;
+    transition: $transition;
 
-        &__title {}
+    &__arrow {
+        transform: rotate(45deg);
+        display: inline-block;
+        transition: $transition;
+    }
+
+    &:hover {
+        color: white;
+
+        & .ui-link__arrow {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+.mod-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__label {
+        font-size: .95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    &__title {
+        font-size: 1.9rem;
     }
 }
 

@@ -1,7 +1,7 @@
 .row {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 0 15px;
+  padding: 0 20px;
   position: relative;
   width: 100%;
 }
@@ -10,13 +10,54 @@
   opacity: 0;
 }
 
+.ui-link {
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #A8A8A8;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+}
+.ui-link__arrow {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: inline-block;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+}
+.ui-link:hover {
+  color: white;
+}
+.ui-link:hover .ui-link__arrow {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.mod-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.mod-header__label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.mod-header__title {
+  font-size: 1.9rem;
+}
+
 .button {
   padding: 12px 30px 10px;
-  background: #1CD3C1;
+  background: #A8A8A8;
   border: 0;
   color: #fff;
   text-transform: uppercase;
-  font: bold 12px/12px "Roboto", sans-serif;
+  font: bold 12px/12px "SuisseIntl", sans-serif;
   letter-spacing: 3px;
   position: relative;
   display: inline-block;
