@@ -12,9 +12,9 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
-  color: rgb(0, 0, 1);
-  font: 1rem/1.1 "Roboto", sans-serif;
+  background-color: black;
+  color: white;
+  font: 1rem/1.1 "SuisseIntl", sans-serif;
   margin: 0;
   padding-top: 0;
 }
@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   outline: 0;
+  color: white;
 }
 
 h1,
@@ -32,6 +33,7 @@ h5,
 h6,
 p {
   margin: 0;
+  font-weight: inherit;
 }
 
 figure,
@@ -61,6 +63,7 @@ button {
   cursor: pointer;
   outline: 0;
   padding: 0;
+  font-family: "SuisseIntl", sans-serif;
 }
 
 input:focus,
