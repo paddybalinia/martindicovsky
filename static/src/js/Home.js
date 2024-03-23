@@ -15,19 +15,9 @@
     ticking = false;
   // Constructor
   function Constructor() {
-    const LinkToggle = document.querySelectorAll("[data-togglenav]");
-
-    for (let e = 0; e < LinkToggle.length; e++) {
-      LinkToggle[e].addEventListener("click", NavToggle, false);
-    }
     window.addEventListener("scroll", onScroll);
-  }
-
-  function NavToggle() {
-    const Nav = document.querySelector(".nav");
-    const NavOverlay = document.querySelector(".nav__overlay");
-    Nav.classList.toggle("active");
-    NavOverlay.classList.toggle("active");
+    var modHomeElement = document.querySelector(".mod-home");
+    modHomeElement.style.height = viewportHeight + "px";
   }
 
   /**
@@ -59,16 +49,20 @@
    * @return void
    */
   function update() {
-    const menuLinks = document.querySelectorAll(".header__ul a");
+    const menuLinks = document.querySelectorAll(
+      ".header__li__a,.mod-home__top__a"
+    );
 
     var scrollPosition = lastScrollY;
-    var updateScroll = Math.max(scrollPosition - 350 - Header.offsetHeight);
+    var updateScroll = Math.max(
+      scrollPosition - viewportHeight - Header.offsetHeight
+    );
 
     Header.classList[scrollPosition >= 70 ? "add" : "remove"](
       "header--beforesticky"
     );
 
-    if (scrollPosition > 350 && updateScroll < 0) {
+    if (scrollPosition > viewportHeight && updateScroll < 0) {
       Header.style.position = "fixed";
       Header.style.top = updateScroll + "px";
     }
@@ -77,14 +71,10 @@
       Header.style.top = 0 + "px";
     }
 
-    if (scrollPosition < 350) {
-      Header.style.position = "absolute";
-      Header.style.top = "0";
+    if (scrollPosition < viewportHeight) {
+      // Header.style.position = "absolute";
+      Header.style.top = "-70px";
     }
-
-    ButtonScrollUp.classList[lastScrollY >= viewportHeight ? "add" : "remove"](
-      "visible"
-    );
 
     menuLinks.forEach((link) => {
       const section = document.querySelector(link.getAttribute("href"));

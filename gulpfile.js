@@ -94,7 +94,7 @@ function optimizeFonts() {
     .pipe(gulp.dest(paths.fonts.dest));
 }
 
-const jsFiles = ["static/src/js/partials/Todo.js"];
+const jsFiles = ["static/src/js/partials/Header.js"];
 
 function combineScripts() {
   return gulp
