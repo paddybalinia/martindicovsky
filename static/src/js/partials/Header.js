@@ -19,16 +19,18 @@
     var modHomeElement = document.querySelector(".mod-home");
 
     // Verificar si es de escritorio antes de aplicar el estilo
+    var viewportHeight = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight || 0
+    );
     if (isDesktop()) {
-      var viewportHeight = Math.max(
-        document.documentElement.clientHeight,
-        window.innerHeight || 0
-      );
       if (viewportHeight > 550) {
         modHomeElement.style.height = viewportHeight + "px";
       } else {
         modHomeElement.style.maxHeight = 550 + "px";
       }
+    } else {
+      modHomeElement.style.height = viewportHeight + "px";
     }
   }
 
