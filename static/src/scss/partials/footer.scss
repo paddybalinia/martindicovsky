@@ -21,3 +21,20 @@
     }
 
 }
+
+@media (min-width: 768px) {
+    .footer {
+        &__title {
+
+            font-size: 1.28rem;
+        }
+
+        &__copy {
+            font-size: 1rem;
+        }
+
+        &__row {
+            align-items: center;
+        }
+    }
+}

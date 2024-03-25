@@ -49,7 +49,7 @@
 }
 .aval__svg {
   position: absolute;
-  top: 25px;
+  top: 17px;
   right: 25px;
 }
 .aval__content {
@@ -92,4 +92,26 @@
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.2em;
+}
+
+@media (min-width: 760px) {
+  .mod-testimonial {
+    padding: 50px 0;
+  }
+  .slide-last {
+    display: none;
+  }
+  .slides {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 23px;
+  }
+  .slide {
+    width: calc(35% - 23px);
+  }
 }

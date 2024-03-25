@@ -49,3 +49,38 @@
   height: 30px;
   width: 30px;
 }
+
+@media (min-width: 760px) {
+  .header {
+    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+    top: -65px;
+  }
+  .header__row {
+    height: 65px;
+  }
+  .header__title {
+    font-size: 1.3rem;
+  }
+  .header__social {
+    display: none;
+  }
+  .header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 32px;
+  }
+  .header__li__a {
+    color: #000;
+    font-size: 1.25em;
+  }
+  .header__li__a.active {
+    color: #A8A8A8;
+  }
+}

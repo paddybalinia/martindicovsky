@@ -103,3 +103,26 @@
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
+
+@media (min-width: 760px) {
+  .mod-programa {
+    padding: 50px 0;
+  }
+  .mod-steps {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 55px;
+  }
+  .mod-steps__box {
+    /* flex: 0 0 30.5%; */
+    width: calc(35% - 55px);
+  }
+  .mod-steps__cta {
+    height: 44px;
+    max-width: 230px;
+    font-size: 1.25rem;
+    margin-top: 18px;
+  }
+}

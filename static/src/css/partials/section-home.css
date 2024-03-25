@@ -68,3 +68,36 @@
           flex-direction: column;
   gap: 10px;
 }
+
+@media (min-width: 768px) {
+  .mod-home__top {
+    padding: 70px 0;
+    font-size: 1.25rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: 0;
+    width: 100%;
+  }
+  .mod-home__title {
+    font-size: 4.4rem;
+  }
+  .mod-home__bottom {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    padding: 70px 0;
+  }
+  .mod-home__links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 57px;
+  }
+}

@@ -41,7 +41,7 @@
 
     &__svg {
         position: absolute;
-        top: 25px;
+        top: 17px;
         right: 25px;
     }
 
@@ -78,5 +78,26 @@
         justify-content: center;
         align-items: center;
         font-size: 1.2em;
+    }
+}
+
+@media (min-width: 760px) {
+    .mod-testimonial {
+        padding: 50px 0;
+
+    }
+
+    .slide-last {
+        display: none;
+    }
+
+    .slides {
+        display: flex;
+        flex-direction: row;
+        gap: 23px;
+    }
+
+    .slide {
+        width: calc(35% - 23px);
     }
 }
