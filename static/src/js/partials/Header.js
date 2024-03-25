@@ -17,7 +17,24 @@
   function Constructor() {
     window.addEventListener("scroll", onScroll);
     var modHomeElement = document.querySelector(".mod-home");
-    modHomeElement.style.height = viewportHeight + "px";
+
+    // Verificar si es de escritorio antes de aplicar el estilo
+    if (isDesktop()) {
+      var viewportHeight = Math.max(
+        document.documentElement.clientHeight,
+        window.innerHeight || 0
+      );
+      if (viewportHeight > 550) {
+        modHomeElement.style.height = viewportHeight + "px";
+      } else {
+        modHomeElement.style.maxHeight = 550 + "px";
+      }
+    }
+  }
+
+  // Función para verificar si es un dispositivo de escritorio
+  function isDesktop() {
+    return window.matchMedia("(min-width: 1024px)").matches;
   }
 
   /**

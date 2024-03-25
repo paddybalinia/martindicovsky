@@ -69,3 +69,23 @@
 .button--secondary {
   background: #000;
 }
+
+@media (min-width: 768px) {
+  .mod-header__title {
+    font-size: 2.3rem;
+  }
+  .mod-header__block {
+    display: block;
+  }
+  .ui-link {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+  }
+  .mod-contacto__social__a {
+    -webkit-transition: all ease-out 0.2s;
+    transition: all ease-out 0.2s;
+  }
+  .mod-contacto__social__a:hover {
+    background: #4338ca;
+  }
+}

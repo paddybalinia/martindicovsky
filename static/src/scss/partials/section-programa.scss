@@ -98,3 +98,27 @@
         }
     }
 }
+
+@media (min-width: 760px) {
+    .mod-programa {
+        padding: 50px 0;
+    }
+
+    .mod-steps {
+        flex-direction: row;
+        gap: 55px;
+
+    }
+
+    .mod-steps__box {
+        /* flex: 0 0 30.5%; */
+        width: calc(35% - 55px);
+    }
+
+    .mod-steps__cta {
+        height: 44px;
+        max-width: 230px;
+        font-size: 1.25rem;
+        margin-top: 18px;
+    }
+}

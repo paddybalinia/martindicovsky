@@ -13,3 +13,17 @@
         gap: 27px;
     }
 }
+
+@media (min-width: 760px) {
+    .mod-about {
+        padding: 80px 0 55px;
+
+        &__content {
+            padding: 36px 0 0;
+            font-size: 1.3rem;
+            line-height: 2rem;
+            gap: 35px;
+            max-width: 940px;
+        }
+    }
+}

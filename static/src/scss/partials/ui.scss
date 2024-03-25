@@ -68,14 +68,36 @@
     }
 }
 
-.social {}
+
 
 
 
 @media (min-width: 768px) {
     .mod {
-        &__header {
-            &__title {}
+        &-header {
+            &__title {
+                font-size: 2.3rem;
+
+            }
+
+            &__block {
+                display: block;
+            }
+
         }
     }
+
+    .ui-link {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
+
+    .mod-contacto__social__a {
+        transition: $transition;
+
+        &:hover {
+            background: #4338ca;
+        }
+    }
+
 }
