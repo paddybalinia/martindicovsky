@@ -4,6 +4,11 @@
   font-weight: 400;
   font-display: swap;
 }
+html,
+body {
+  height: 100%;
+}
+
 .row {
   margin: 0 auto;
   max-width: 1200px;
