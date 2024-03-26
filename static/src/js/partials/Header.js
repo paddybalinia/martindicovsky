@@ -18,6 +18,7 @@
     window.addEventListener("scroll", onScroll);
     var modHomeElement = document.querySelector(".mod-home");
 
+    NavigationHover();
     // Verificar si es de escritorio antes de aplicar el estilo
     var viewportHeight = Math.max(
       document.documentElement.clientHeight,
@@ -32,6 +33,29 @@
     } else {
       modHomeElement.style.height = viewportHeight + "px";
     }
+  }
+
+  function NavigationHover() {
+    const enlaces = document.querySelectorAll(".mod-home__title-js");
+    var dataSection = "";
+    var homeMod = document.querySelector(".mod-home");
+    enlaces.forEach((enlace) => {
+      enlace.addEventListener("mouseover", function () {
+        dataSection = this.dataset.section;
+
+        const element = homeMod.querySelector(
+          "[data-image=" + dataSection + "]"
+        );
+        element.classList.add("active");
+      });
+
+      enlace.addEventListener("mouseout", function () {
+        const element = homeMod.querySelector(
+          "[data-image=" + dataSection + "]"
+        );
+        element.classList.remove("active");
+      });
+    });
   }
 
   // Función para verificar si es un dispositivo de escritorio
