@@ -186,6 +186,8 @@ input {
   font-size: 1rem;
   width: 100%;
   z-index: 99;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
 }
 .header__title {
   color: black;
@@ -233,8 +235,6 @@ input {
 
 @media (min-width: 760px) {
   .header {
-    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
-            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
     top: -65px;
   }
   .header__row {
