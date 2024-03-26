@@ -7,6 +7,7 @@
     font-size: 1rem;
     width: 100%;
     z-index: 99;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .15);
 
     &__title {
         color: $color-primary;
@@ -46,7 +47,7 @@
 
 @media (min-width: 760px) {
     .header {
-        box-shadow: 0 2px 0 rgba(0, 0, 0, .15);
+
         top: -65px;
 
         &__row {
