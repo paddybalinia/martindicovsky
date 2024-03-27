@@ -86,11 +86,4 @@ body {
     font-size: 1.25rem;
     line-height: 1.25rem;
   }
-  .mod-contacto__social__a {
-    -webkit-transition: all ease-out 0.2s;
-    transition: all ease-out 0.2s;
-  }
-  .mod-contacto__social__a:hover {
-    background: #4338ca;
-  }
 }

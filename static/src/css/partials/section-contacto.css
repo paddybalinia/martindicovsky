@@ -68,7 +68,14 @@
     margin: 44px 0 0;
   }
   .mod-contacto__mail:hover {
-    text-decoration: underline;
+    color: #A8A8A8;
+  }
+  .mod-contacto__social__a {
+    -webkit-transition: all ease-out 0.2s;
+    transition: all ease-out 0.2s;
+  }
+  .mod-contacto__social__a:hover {
+    background: #4338ca;
   }
   .mod-contacto__social__a {
     -webkit-transform: scale(1.15);
