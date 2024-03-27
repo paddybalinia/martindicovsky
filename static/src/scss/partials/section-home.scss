@@ -122,6 +122,14 @@
 
 @media (min-width: 768px) {
     .mod-home {
+        &__links-mail {
+            transition: $transition;
+
+            &:hover {
+                color: $color-hover;
+            }
+        }
+
         &__top {
             padding: 70px 0;
             font-size: 1.25rem;

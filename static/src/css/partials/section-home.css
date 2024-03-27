@@ -144,6 +144,13 @@
 }
 
 @media (min-width: 768px) {
+  .mod-home__links-mail {
+    -webkit-transition: all ease-out 0.2s;
+    transition: all ease-out 0.2s;
+  }
+  .mod-home__links-mail:hover {
+    color: #A8A8A8;
+  }
   .mod-home__top {
     padding: 70px 0;
     font-size: 1.25rem;

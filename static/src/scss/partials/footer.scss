@@ -1,3 +1,5 @@
+@import '../vars.scss';
+
 .footer {
     border-top: 1px solid rgba(255, 255, 255, .4);
     margin: 35px 0 0;
@@ -31,6 +33,14 @@
 
         &__copy {
             font-size: 1rem;
+
+            a {
+                transition: $transition;
+
+                &:hover {
+                    color: $color-hover;
+                }
+            }
         }
 
         &__row {
