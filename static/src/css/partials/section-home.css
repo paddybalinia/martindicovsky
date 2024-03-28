@@ -70,7 +70,6 @@
           flex-direction: column;
   gap: 10px;
 }
-
 .mod-home__images {
   display: block;
   position: absolute;
@@ -81,7 +80,6 @@
   pointer-events: none;
   text-align: center;
 }
-
 .mod-home__images__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,7 +97,6 @@
   width: 100%;
   height: 100%;
 }
-
 .mod-home__image {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,7 +115,6 @@
   width: 100%;
   height: 100%;
 }
-
 .mod-home__image img {
   -webkit-transition: all 1.5s cubic-bezier(0, 0.805, 0.145, 0.995), opacity 0.2s;
   transition: all 1.5s cubic-bezier(0, 0.805, 0.145, 0.995), opacity 0.2s;
@@ -135,7 +131,6 @@
   -o-object-fit: cover;
   object-fit: cover;
 }
-
 .mod-home__image.active img {
   opacity: 1;
   width: 670px;
