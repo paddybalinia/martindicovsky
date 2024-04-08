@@ -43,6 +43,6 @@
   },
   "splash_screen": {
     "show": true,
-    "src": "ttps://www.martindicovsky.com.ar/static/dist/images/apps/precomposed-256.png"
+    "src": "https://www.martindicovsky.com.ar/static/dist/images/apps/precomposed-256.png"
   }
 }
