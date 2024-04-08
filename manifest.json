@@ -4,28 +4,28 @@
   "description": "Sitio web personal de Martin Dicovsky",
   "icons": [
     {
-      "src": "static/dist/images/apps/precomposed-128.png",
+      "src": "https://www.martindicovsky.com.ar/static/dist/images/apps/precomposed-128.png",
       "type": "image/png",
       "sizes": "128x128",
       "purpose": "maskable"
     },
     {
-      "src": "static/dist/images/apps/android-chrome-192x192.png",
+      "src": "https://www.martindicovsky.com.ar/static/dist/images/apps/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "static/dist/images/apps/precomposed-256.png",
+      "src": "https://www.martindicovsky.com.ar/static/dist/images/apps/precomposed-256.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "static/dist/images/apps/precomposed-384.png",
+      "src": "https://www.martindicovsky.com.ar/static/dist/images/apps/precomposed-384.png",
       "type": "image/png",
       "sizes": "384x384"
     },
     {
-      "src": "static/dist/images/apps/precomposed-512.png",
+      "src": "https://www.martindicovsky.com.ar/static/dist/images/apps/precomposed-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -34,5 +34,15 @@
   "orientation": "portrait",
   "theme_color": "#000",
   "display": "standalone",
-  "start_url": "/?utm_source=web_app_manifest"
+  "start_url": "/?utm_source=web_app_manifest",
+  "scope": "/",
+  "lang": "es",
+  "serviceworker": {
+    "src": "/service-worker.js",
+    "description": "Servicio de trabajador para proporcionar funcionalidad offline y mejorar el rendimiento."
+  },
+  "splash_screen": {
+    "show": true,
+    "src": "ttps://www.martindicovsky.com.ar/static/dist/images/apps/precomposed-256.png"
+  }
 }
