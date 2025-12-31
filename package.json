@@ -8,6 +8,9 @@
   },
   "author": "Patricio Baliña",
   "license": "ISC",
+  "engines": {
+    "node": "24.x"
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
