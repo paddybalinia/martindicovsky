@@ -1,9 +1,10 @@
+require("./util-polyfill");
 const gulp = require("gulp");
 const imagemin = require("gulp-imagemin");
-const cssmin = require("gulp-cssmin");
+const cleanCSS = require("gulp-clean-css");
 const rename = require("gulp-rename");
 const scss = require("gulp-sass")(require("sass"));
-const minify = require("gulp-minify");
+const terser = require("gulp-terser");
 const autoprefixer = require("gulp-autoprefixer");
 const concat = require("gulp-concat");
 // const htmlmin = require("gulp-htmlmin"); // Nuevo módulo añadido
@@ -68,7 +69,7 @@ function compileSass() {
 function minifyCSS() {
   return gulp
     .src(paths.styles_css.src)
-    .pipe(cssmin())
+    .pipe(cleanCSS())
     .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(paths.styles_css.dest));
 }
@@ -76,7 +77,7 @@ function minifyCSS() {
 function minifyScripts() {
   return gulp
     .src(paths.scripts.src)
-    .pipe(minify())
+    .pipe(terser())
     .pipe(gulp.dest(paths.scripts.dest));
 }
 
