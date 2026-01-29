@@ -7,36 +7,54 @@ import {
   MessageCircle 
 } from "lucide-react";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const benefits = [
   {
     icon: Heart,
-    title: "Autoestima sólida y genuina",
+    title: "Sana autoestima",
     description: "Una confianza que nace de adentro, no de la validación externa",
   },
   {
     icon: Users,
-    title: "Relaciones equilibradas y sanas",
-    description: "Vínculos que te nutren y te hacen crecer mutuamente",
+    title: "Relaciones sanas y recíprocas",
+    description: "Vínculos que te nutren en vez de drenarte",
   },
   {
     icon: Shield,
     title: "Límites claros sin culpa",
-    description: "La capacidad de decir 'no' protegiendo tu bienestar",
+    description: "Recuperás tu tiempo y tu energía al dejar de cargar con problemas ajenos",
   },
   {
     icon: Compass,
-    title: "Claridad sobre lo que querés",
-    description: "Dirección y propósito en cada área de tu vida",
+    title: "Control sobre tu vida",
+    description: "Salís del piloto automático. Recuperás la claridad para saber qué querés vos, más allá de las expectativas de tu familia o tu entorno",
   },
   {
     icon: Wrench,
-    title: "Herramientas para toda la vida",
-    description: "Recursos prácticos que usarás más allá de la mentoría",
+    title: "Independencia emocional",
+    description: "No te llevás solo teoría, te llevás un kit de herramientas prácticas para gestionar tus emociones y vínculos para siempre",
   },
   {
     icon: MessageCircle,
     title: "Acompañamiento personalizado",
-    description: "Un proceso diseñado específicamente para tu situación",
+    description: "No es una terapia más. Voy a acompañarte durante todo el proceso",
   },
 ];
 
@@ -46,13 +64,13 @@ const BenefitsSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <span className="text-secondary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            Transformación real
+          Tu nueva realidad: 
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Qué vas a <span className="text-gradient-gold">lograr</span>
+          Lo que cambia cuando <span className="text-gradient-gold">recuperás tu valor</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Estos son los resultados concretos que experimentarás durante y después del proceso
+          Estos son los resultados concretos que vas a experimentar durante y después del proceso
           </p>
         </div>
 
