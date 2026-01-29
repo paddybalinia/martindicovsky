@@ -1,9 +1,9 @@
 import { Award, BookOpen, Heart } from "lucide-react";
 
 const credentials = [
-  { icon: Award, text: "Coach certificado en desarrollo personal" },
+  { icon: Award, text: "Coach certificado internacionalmente" },
   { icon: BookOpen, text: "+10 años de experiencia" },
-  { icon: Heart, text: "+500 vidas transformadas" },
+  { icon: Heart, text: "+100 vidas transformadas" },
 ];
 
 const AboutSection = () => {
@@ -32,15 +32,15 @@ const AboutSection = () => {
           {/* Content */}
           <div className="order-1 lg:order-2 space-y-6">
             <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-              Tu guía en este proceso
+            Se lo que se siente no ser la prioridad en tu propia vida
             </span>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Soy <span className="text-gradient-cta">Martín Dicovsky</span>
+            Soy <span className="text-gradient-cta">Martín Dicovsky</span>
             </h2>
             
             <div className="space-y-4 text-muted-foreground">
-              <p>
+              {/* <p>
                 Durante años viví desconectado de mí mismo, priorizando a todos menos a mí, 
                 buscando validación externa y sintiéndome vacío aunque "tenía todo".
               </p>
@@ -51,7 +51,12 @@ const AboutSection = () => {
               <p className="text-foreground font-medium">
                 Mi misión es acompañarte a reconectarte con tu esencia, construir relaciones 
                 sanas y vivir una vida que realmente te represente.
-              </p>
+              </p> */}
+              <p>Hace años, estaba en una relación tóxica de la cual no podía salir (en realidad no quería). Me sentía muy mal conmigo mismo, y sin herramientas para estar bien. Siendo el típico “Nice Guy” o “Complaciente” que no ponía límites por miedo al rechazo. En ese momento, tomé la decisión de cambiar mi vida:</p>
+            <p>Dejé esa relación que no me hacía bien, renuncié a mi trabajo y me fuí a probar suerte un año a Suecia (sin hablar el idioma).
+            Pero el verdadero cambio empezó en Londres, en el evento de Tony Robbins. Ahí, frente a las brasas, no tuve una revelación mágica ni nada cursi: simplemente me di cuenta que soy más que mis miedos, y que si yo no me daba mi propio lugar, nadie más lo iba a hacer por mí.
+            </p>
+            <p className="text-foreground font-medium">Después de más de 20.000 dólares invertidos en certificaciones, cursos, y libros. Y muchos dolorosos errores, te traigo este Método S.I.A. donde te comparto todo lo que me sirvió para estar donde estoy hoy: viviendo de mi propósito, y en mis términos (no en los de mi pareja, familia o amigos). Con relaciones sanas y recíprocas.</p>
             </div>
 
             {/* Credentials */}

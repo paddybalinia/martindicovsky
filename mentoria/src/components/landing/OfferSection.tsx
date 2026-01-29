@@ -1,11 +1,13 @@
 import { Video, FileText, MessageSquare, Users, Clock, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
+
+
 const offerItems = [
   {
     icon: Video,
-    title: "Sesiones 1:1 personalizadas",
-    description: "Encuentros semanales enfocados 100% en tu proceso y situación particular",
+    title: "Sesiones 1:1",
+    description: "Encuentros semanales para eliminar tus bloqueos y aplicar el método a tu situación particular",
   },
   {
     icon: FileText,
@@ -14,8 +16,8 @@ const offerItems = [
   },
   {
     icon: MessageSquare,
-    title: "Seguimiento entre sesiones",
-    description: "Acceso directo por WhatsApp para dudas y acompañamiento continuo",
+    title: "Seguimiento personalizado",
+    description: "Contacto directo conmigo para resolver dudas sobre situaciones reales que te pasen en el día a día",
   },
   {
     icon: Users,
@@ -25,7 +27,7 @@ const offerItems = [
   {
     icon: Clock,
     title: "Flexibilidad horaria",
-    description: "Sesiones adaptadas a tu agenda, incluyendo fines de semana",
+    description: "Sesiones adaptadas a tu agenda",
   },
   {
     icon: Zap,
@@ -34,19 +36,21 @@ const offerItems = [
   },
 ];
 
+
 const OfferSection = () => {
   return (
     <section className="py-20 px-4 bg-card/50" id="mentoria">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            La mentoría
+          El Método
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          
             Todo lo que vas a <span className="text-gradient-cta">recibir</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Un programa completo diseñado para tu transformación personal
+          Herramientas prácticas y soporte directo para que dejes de postergarte y recuperes tu lugar
           </p>
         </div>
 
