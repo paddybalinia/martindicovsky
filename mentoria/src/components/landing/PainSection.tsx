@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const CALENDLY_URL = "https://calendly.com/martindicovsky";
+const CALENDLY_URL = "https://calendly.com/coach-martindicovsky/45";
 
 const painPoints = [
   "Priorizás a todos menos a vos",
@@ -43,7 +43,7 @@ const PainSection = () => {
 
         <div className="text-center">
           <p className="text-muted-foreground mb-6">
-          Si te sentís así, no es que te falte voluntad. <br /> Es que te falta un método para recuperar tu valor<span className="text-foreground font-semibold"> Y esto tiene solución.</span>
+          Si te sentís así, no es que te falte voluntad. <br /> Es que te falta un método para recuperar tu valor.<span className="text-foreground font-semibold"> Y esto tiene solución.</span>
           </p>
           <Button 
             size="lg"
@@ -51,7 +51,7 @@ const PainSection = () => {
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             onClick={() => window.open(CALENDLY_URL, "_blank")}
           >
-            Quiero recuperar mi confianza y mi valo
+            Quiero recuperar mi confianza y mi valor
           </Button>
         </div>
       </div>

@@ -46,7 +46,7 @@ const FinalCTASection = () => {
           <div className="space-y-4">
             <Button 
               size="lg" 
-              className="bg-gradient-cta hover:opacity-90 text-primary-foreground font-bold text-lg px-12 py-7 shadow-glow transition-all duration-300 animate-pulse"
+              className="bg-gradient-cta hover:opacity-90 text-primary-foreground font-bold text-lg px-5 lg:px-12 py-7 shadow-glow transition-all duration-300 animate-pulse"
               onClick={() => window.open(CALENDLY_URL, "_blank")}
             >
               Agendar mi sesión de claridad

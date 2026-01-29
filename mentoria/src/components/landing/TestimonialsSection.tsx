@@ -86,8 +86,8 @@ const TestimonialsSection = () => {
               </div>
               
               <div className="p-4">
-                <h4 className="font-semibold">{testimonial.name}</h4>
-                <p className="text-sm text-muted-foreground mb-2">{testimonial.role}</p>
+                <h4 className="font-semibold mb-2">{testimonial.name}</h4>
+                {/* <p className="text-sm text-muted-foreground mb-2">{testimonial.role}</p> */}
                 <p className="text-sm text-muted-foreground italic">"{testimonial.quote}"</p>
               </div>
             </div>
@@ -115,7 +115,7 @@ const TestimonialsSection = () => {
               
               <div className="p-4">
                 <h4 className="font-semibold">{testimonials[currentIndex].name}</h4>
-                <p className="text-sm text-muted-foreground mb-2">{testimonials[currentIndex].role}</p>
+                {/* <p className="text-sm text-muted-foreground mb-2">{testimonials[currentIndex].role}</p> */}
                 <p className="text-sm text-muted-foreground italic">"{testimonials[currentIndex].quote}"</p>
               </div>
             </div>
