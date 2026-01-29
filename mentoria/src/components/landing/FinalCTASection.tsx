@@ -20,9 +20,9 @@ const FinalCTASection = () => {
       
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-          Tu nueva realidad empieza con una {" "}
-            <span className="text-gradient-cta">decisión</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold max-w-3xl mx-auto">
+          Tu nueva realidad empieza con  {" "}
+            <span className="text-gradient-cta">una decisión</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
