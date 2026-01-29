@@ -6,26 +6,26 @@ const testimonials = [
   {
     name: "Marta Fernández",
     role: "Emprendedora",
-    videoUrl: "https://www.youtube.com/embed/VIDEO_1",
-    quote: "Después de la mentoría con Martín, por fin pude poner límites sanos en mi familia...",
+    videoUrl: "https://www.youtube.com/embed/j8q6XBDnBoY",
+    quote: "Dejé de fumar, viajé sola, retomé los estudios y sigo mejorando cada día...",
   },
   {
     name: "Feli Tapia",
     role: "Profesional independiente",
-    videoUrl: "https://www.youtube.com/embed/VIDEO_2",
-    quote: "Recuperé mi autoestima y aprendí a valorarme como merezco...",
+    videoUrl: "https://www.youtube.com/embed/2I3O6e23aBM",
+    quote: "Dejé atrás la dependencia emocional para poner límites sin culpa. Mejoré mi relación con mi pareja, familia y amigos...",
   },
   {
     name: "Henry G. González",
     role: "Ejecutivo",
-    videoUrl: "https://www.youtube.com/embed/VIDEO_3",
-    quote: "El proceso con Martín me ayudó a reconectar con mi verdadero yo...",
+    videoUrl: "https://www.youtube.com/embed/G3IL7W-5EYk",
+    quote: "Pude dejar atrás la culpa por el pasado y la preocupación por el futuro. Hoy me valoro y mi esposa, hija y compañeros de trabajo me lo agradecen...",
   },
   {
     name: "Carla Costa",
     role: "Madre y profesional",
-    videoUrl: "https://www.youtube.com/embed/VIDEO_4",
-    quote: "Dejé de sentir culpa por priorizarme y mis relaciones mejoraron...",
+    videoUrl: "https://www.youtube.com/embed/yrJwA5ui-58",
+    quote: "Gracias al trabajo con Martín aprendí que ya nadie me puede hacer sentir mal sin mi permiso. Hoy me elijo y me amo...",
   },
 ];
 
@@ -39,20 +39,23 @@ const TestimonialsSection = () => {
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+  
+
+
 
   return (
     <section className="py-20 px-4" id="testimonios">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <span className="text-secondary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            Resultados reales
+          Resultados reales
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Lo que dicen quienes ya{" "}
+          Lo que dicen quienes ya {" "}
             <span className="text-gradient-gold">lo vivieron</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Historias de transformación de personas como vos
+          <p className="text-muted-foreground text-lg  mx-auto">
+          Personas como vos, que dejaron de postergarse y recuperaron su confianza con el Método S.I.A.
           </p>
         </div>
 
@@ -65,11 +68,21 @@ const TestimonialsSection = () => {
             >
               {/* Video thumbnail placeholder */}
               <div className="relative aspect-video bg-muted">
+              <iframe
+                    src={testimonial.videoUrl}
+                    title={testimonial.name}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full absolute inset-0 z-10"
+                  />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-14 h-14 bg-secondary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    
                     <Play className="w-6 h-6 text-secondary-foreground ml-1" />
+                   
+
                   </div>
-                </div>
+                </div> 
               </div>
               
               <div className="p-4">
@@ -89,6 +102,13 @@ const TestimonialsSection = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-14 h-14 bg-secondary/90 rounded-full flex items-center justify-center">
                     <Play className="w-6 h-6 text-secondary-foreground ml-1" />
+                    <iframe
+                    src={testimonials[currentIndex].videoUrl}
+                    title={testimonials[currentIndex].name}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full absolute inset-0"
+                  />
                   </div>
                 </div>
               </div>
