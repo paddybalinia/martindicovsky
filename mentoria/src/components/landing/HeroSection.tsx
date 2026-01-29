@@ -23,7 +23,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
             
               Dejá de sentirte{" "}
-              <span className="text-gradient-cta">invisible</span>{" "}
+              <span className="text-gradient-cta">invisible:</span>{" "}
               Recuperá tu confianza y conseguí los vínculos que realmente merecés
             </h1>
 

@@ -52,12 +52,19 @@ const AboutSection = () => {
                 Mi misión es acompañarte a reconectarte con tu esencia, construir relaciones 
                 sanas y vivir una vida que realmente te represente.
               </p> */}
-              <p>Hace años, estaba en una relación tóxica de la cual no podía salir (en realidad no quería). Me sentía muy mal conmigo mismo, y sin herramientas para estar bien. Siendo el típico “Nice Guy” o “Complaciente” que no ponía límites por miedo al rechazo. En ese momento, tomé la decisión de cambiar mi vida:</p>
+              {/* <p>Hace años, estaba en una relación tóxica de la cual no podía salir (en realidad no quería). Me sentía muy mal conmigo mismo, y sin herramientas para estar bien. Siendo el típico “Nice Guy” o “Complaciente” que no ponía límites por miedo al rechazo. En ese momento, tomé la decisión de cambiar mi vida:</p>
             <p>Dejé esa relación que no me hacía bien, renuncié a mi trabajo y me fuí a probar suerte un año a Suecia (sin hablar el idioma).
             Pero el verdadero cambio empezó en Londres, en el evento de Tony Robbins. Ahí, frente a las brasas, no tuve una revelación mágica ni nada cursi: simplemente me di cuenta que soy más que mis miedos, y que si yo no me daba mi propio lugar, nadie más lo iba a hacer por mí.
             </p>
             <p className="text-foreground font-medium">Después de más de 20.000 dólares invertidos en certificaciones, cursos, y libros. Y muchos dolorosos errores, te traigo este Método S.I.A. donde te comparto todo lo que me sirvió para estar donde estoy hoy: viviendo de mi propósito, y en mis términos (no en los de mi pareja, familia o amigos). Con relaciones sanas y recíprocas.</p>
-            </div>
+            </div> */}
+
+<p>Hace años, estaba en una relación tóxica de la cual no podía salir (en realidad no quería). Me sentía muy mal conmigo mismo, y sin herramientas para estar bien. Siendo el típico “Nice Guy” o “Complaciente” que no ponía límites por miedo al rechazo. En ese momento, tomé la decisión de cambiar mi vida:</p>
+<p>Dejé esa relación que no me hacía bien, renuncié a mi trabajo y me fuí a probar suerte un año a Suecia (sin hablar el idioma).
+Pero el verdadero cambio empezó en Londres, en el evento de Tony Robbins. Ahí, frente a las brasas, no tuve una revelación mágica ni nada cursi: simplemente me di cuenta que <span className="text-foreground font-medium">soy más que mis miedos</span>, y que <span className="text-foreground font-medium">si yo no me daba mi propio lugar </span>, nadie más lo iba a hacer por mí.
+</p>
+<p>Después de más de <span className="text-foreground font-medium">20.000 dólares invertidos</span> en certificaciones, cursos, y libros. Y muchos dolorosos errores, te traigo este Método S.I.A. donde te comparto todo lo que me sirvió para estar donde estoy hoy: viviendo de mi propósito, y en mis términos (no en los de mi pareja, familia o amigos). <span className="text-foreground font-medium">Con relaciones sanas y recíprocas.</span></p>
+</div>
 
             {/* Credentials */}
             <div className="flex flex-wrap gap-4 pt-4">
