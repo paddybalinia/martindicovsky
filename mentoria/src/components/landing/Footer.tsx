@@ -26,6 +26,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={social.label}
                 className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label={social.label}
               >
@@ -36,7 +37,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            Diseño y desarrollo por <a href="https://patriciobalina.com.ar/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors"> Patricio Baliña
+            Diseño y desarrollo por <a href="https://patriciobalina.com.ar/" target="_blank" title="Patricio Baliña" rel="noopener noreferrer" className="hover:text-foreground transition-colors"> Patricio Baliña
             </a>
             
           </div>
