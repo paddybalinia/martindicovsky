@@ -35,17 +35,14 @@ const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
-              Términos
+          <div className="flex items-center gap-1 text-sm text-muted-foreground">
+            Diseño y desarrollo por <a href="https://patriciobalina.com.ar/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors"> Patricio Baliña
             </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Privacidad
-            </a>
+            
           </div>
         </div>
 
-        <div className="text-center mt-8 pt-8 border-t border-border">
+        <div className="text-center mt-8 pt-8 pb-14 md:pb-8 border-t border-border">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Martín Dicovsky. Todos los derechos reservados.
           </p>
