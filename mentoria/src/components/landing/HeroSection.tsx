@@ -20,7 +20,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold leading-tight">
             
               Dejá de sentirte{" "}
               <span className="text-gradient-cta">invisible:</span>{" "}
