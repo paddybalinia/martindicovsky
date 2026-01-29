@@ -5,32 +5,37 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+
+
+
 const faqs = [
   {
-    question: "¿Cuánto dura el proceso de mentoría?",
-    answer: "El programa tiene una duración de 3 meses, con sesiones semanales de 1 hora. Sin embargo, la duración puede ajustarse según tus necesidades específicas. Muchas personas eligen continuar con un acompañamiento mensual después de completar el programa inicial.",
+    question: "¿Cuánto dura el Método S.I.A.?",
+    answer: "El programa tiene una duración de 3 meses, con sesiones semanales de entre 1 y 2 horas. Sin embargo, la duración puede ajustarse según tus necesidades específicas. ",
   },
   {
     question: "¿Es para mí si ya hice terapia?",
-    answer: "¡Absolutamente! La mentoría es complementaria a la terapia. Mientras la terapia se enfoca en sanar el pasado, la mentoría te da herramientas prácticas para construir el futuro que querés. Muchos de mis clientes han hecho o hacen terapia simultáneamente.",
+    answer: "Sí. De hecho, la mayoría de mis clientes vienen de años de terapia. La diferencia es que acá no vamos solo a entender por qué te sentís invisible, sino a ejecutar soluciones para que dejes de ser el 'complaciente' hoy mismo. La terapia te da el diagnóstico; el Método S.I.A. te da el plan de acción.",
   },
   {
     question: "¿Cómo sé si es el momento correcto?",
-    answer: "Si llegaste hasta acá, probablemente sea el momento. El momento 'perfecto' no existe. Lo importante es que sientas el deseo de cambiar y estés dispuesto/a a comprometerte con tu proceso. Si tenés dudas, la llamada de descubrimiento es gratuita y sin compromiso.",
+    answer: "Si llegaste hasta acá, probablemente sea el momento. El momento 'perfecto' no existe. Lo importante es que sientas el deseo de cambiar y estés dispuesto/a a comprometerte con tu proceso. Si tenés dudas, podés escribirme por Instagram y las resolvemos.",
   },
   {
     question: "¿Qué diferencia hay con el coaching tradicional?",
-    answer: "El Método S.I.A. integra técnicas de coaching con herramientas de sanación emocional y desarrollo personal profundo. No es solo establecer metas, sino transformar las creencias y patrones que te impiden alcanzarlas. Es un enfoque integral que trabaja mente, emociones y acciones.",
+    answer: "El Método S.I.A. no es una charla motivacional. Es un sistema ya comprobado que integra técnicas de coaching, con herramientas de psicología, PNL y neurociencia. No es solo establecer metas, sino transformar las creencias y patrones que te impiden alcanzarlas. Es un enfoque integral que trabaja mente, emociones y acciones.",
   },
   {
     question: "¿Qué pasa si siento que no funciona?",
-    answer: "Mi compromiso es tu transformación. Si después de las primeras semanas sentís que no es lo que necesitás, hablamos y buscamos la mejor solución. Lo importante es que te sientas acompañado/a y que el proceso tenga sentido para vos.",
+    answer: "Si después de la primera semana de trabajo sentís que el método no es para vos, me lo decís y <strong class='text-white'>te devuelvo el 100% de tu dinero</strong>. Sin vueltas. No me interesa quedarme con el pago de alguien a quien no estoy ayudando a obtener resultados reales. Mi tiempo vale y el tuyo también; solo busco trabajar con personas decididas a dejar de ser invisibles y recuperar su lugar.",
   },
   {
     question: "¿Las sesiones son online o presenciales?",
-    answer: "Todas las sesiones son online a través de videollamada, lo que te permite conectarte desde cualquier lugar del mundo. Esto brinda flexibilidad y comodidad, manteniendo la misma profundidad y conexión que una sesión presencial.",
+    answer: "Son <strong class='text-white'>100% online por videollamada</strong>. Esto te permite conectarte desde donde estés y, sobre todo, <strong class='text-white'>ahorrar tiempo en traslados</strong>. La efectividad del sistema es la misma porque el Método S.I.A. se basa en la ejecución de herramientas y no en el lugar físico donde estemos.",
   },
 ];
+
+
 
 const FAQSection = () => {
   return (
@@ -38,10 +43,10 @@ const FAQSection = () => {
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-12">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            Preguntas frecuentes
+          Preguntas frecuentes
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Resolvemos tus <span className="text-gradient-cta">dudas</span>
+          Resuelvo tus <span className="text-gradient-cta">dudas</span>
           </h2>
         </div>
 
@@ -56,7 +61,7 @@ const FAQSection = () => {
                 <span className="text-lg font-medium">{faq.question}</span>
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pb-6">
-                {faq.answer}
+                <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
               </AccordionContent>
             </AccordionItem>
           ))}
