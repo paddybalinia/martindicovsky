@@ -1,5 +1,6 @@
 import { Sparkles, Heart, Target } from "lucide-react";
 
+
 const methodSteps = [
   {
     letter: "S",
@@ -11,14 +12,14 @@ const methodSteps = [
   {
     letter: "I",
     title: "Identidad",
-    description: "Reconstruimos tu sentido de identidad y fortalecemos tu autoestima genuina",
+    description: "Vas a encontrar tu verdadero valor y potenciarlo con poderosos hábitos. ",
     icon: Sparkles,
     color: "text-primary",
   },
   {
     letter: "A",
     title: "Acción",
-    description: "Implementamos herramientas prácticas para vivir desde tu nuevo yo",
+    description: "Aplicamos poderosas herramientas prácticas para priorizarte sin culpa y tener relaciones sanas y recíprocas.",
     icon: Target,
     color: "text-secondary",
   },
@@ -30,14 +31,13 @@ const MethodSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-4 block">
-            La solución
+          Basta de humo, resultados reales
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Existe un <span className="text-gradient-cta">camino diferente</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 max-w-4xl mx-auto">
+          El sistema de  <span className="text-gradient-cta"> 3 pasos </span>para  recuperar tu valor y dejar de ser invisible.
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            El Método S.I.A. es un proceso probado de transformación personal que te llevará 
-            de donde estás a donde querés estar
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          El Método S.I.A. está diseñado para que vuelvas a ser tu prioridad aplicando herramientas prácticas, sin pasar años en terapia ni perderte en miles de libros de autoayuda
           </p>
         </div>
 
@@ -77,7 +77,7 @@ const MethodSection = () => {
         <div className="max-w-3xl mx-auto">
           <div className="aspect-video bg-card border border-border rounded-2xl overflow-hidden">
             <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID"
+              src="https://www.youtube.com/embed/SdVXN16Or4k"
               title="Método S.I.A. - Martín Dicovsky"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -85,7 +85,7 @@ const MethodSection = () => {
             />
           </div>
           <p className="text-center text-muted-foreground text-sm mt-4">
-            Mirá cómo funciona el Método S.I.A.
+          Mirá cómo funciona el Método S.I.A.
           </p>
         </div>
       </div>
