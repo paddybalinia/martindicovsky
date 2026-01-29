@@ -52,22 +52,19 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* Right content - Photo placeholder */}
+          {/* Right content - Photo */}
           <div className="relative hidden lg:block">
             <div className="relative aspect-[3/4] max-w-md mx-auto">
               {/* Glow effect behind photo */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
               
-              {/* Photo placeholder */}
-              <div className="relative bg-card border border-border rounded-3xl overflow-hidden h-full flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Users className="w-16 h-16 text-muted-foreground" />
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Foto profesional de Martín
-                  </p>
-                </div>
+              {/* Photo */}
+              <div className="relative bg-card border border-border rounded-3xl overflow-hidden h-full">
+                <img 
+                  src="/martin-dicovsky-coach.webp" 
+                  alt="Martín Dicovsky - Coach profesional"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
