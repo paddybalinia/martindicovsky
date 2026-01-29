@@ -1,14 +1,16 @@
 import { ArrowRight, Check, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const CALENDLY_URL = "https://calendly.com/martindicovsky";
+const CALENDLY_URL = "https://calendly.com/coach-martindicovsky/45 ";
 
 const benefits = [
-  "Autoestima sólida y genuina",
-  "Relaciones equilibradas y sanas",
-  "Límites claros sin culpa",
-  "Claridad sobre tu propósito",
+  "Límites sin culpa",
+  "Relaciones sanas y recíprocas",
+  "Confianza real (sin pedir permiso)",
+  "Control total de tu tiempo",
+  
 ];
+
 
 const FinalCTASection = () => {
   return (
@@ -19,13 +21,12 @@ const FinalCTASection = () => {
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center space-y-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            Tu transformación empieza con{" "}
-            <span className="text-gradient-cta">una conversación</span>
+          Tu nueva realidad empieza con una {" "}
+            <span className="text-gradient-cta">decisión</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            En esta llamada gratuita vamos a conocernos, entender tu situación 
-            y ver si la mentoría es lo que necesitás en este momento.
+          Agendá una videollamada de claridad. Vamos a revisar tus bloqueos actuales y ver si el Método S.I.A. es el sistema que necesitás para recuperar tu lugar y dejar de postergarte.
           </p>
 
           {/* Benefits recap */}
@@ -48,19 +49,19 @@ const FinalCTASection = () => {
               className="bg-gradient-cta hover:opacity-90 text-primary-foreground font-bold text-lg px-12 py-7 shadow-glow transition-all duration-300 animate-pulse"
               onClick={() => window.open(CALENDLY_URL, "_blank")}
             >
-              Reservá tu lugar ahora
+              Agendar mi sesión de claridad
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            
+    
             {/* Trust signals */}
             <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-primary" />
-                <span>Sin compromiso</span>
+                <span>Sin obligación de venta</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary" />
-                <span>30 minutos</span>
+                <span>45 minutos</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-primary" />
@@ -72,8 +73,9 @@ const FinalCTASection = () => {
           {/* Urgency */}
           <div className="pt-8">
             <div className="inline-block bg-secondary/20 border border-secondary/50 rounded-xl px-6 py-3">
-              <p className="text-secondary font-semibold">
-                ⚡ Solo quedan 3 cupos disponibles este mes
+              <p className="text-secondary font-semibold ">
+              ⚡ Solo abro 5 lugares por mes para garantizar resultados.<br/> Una vez que se llenan, la agenda se cierra hasta el mes siguiente.
+
               </p>
             </div>
           </div>

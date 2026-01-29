@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
-const CALENDLY_URL = "https://calendly.com/martindicovsky";
+const CALENDLY_URL = "https://calendly.com/coach-martindicovsky/45";
 
 const StickyCTA = () => {
   const [isVisible, setIsVisible] = useState(false);

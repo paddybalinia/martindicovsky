@@ -1,10 +1,10 @@
 import { Instagram, Youtube, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com/martindicovsky", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com/@martindicovsky", label: "YouTube" },
-  { icon: Linkedin, href: "https://linkedin.com/in/martindicovsky", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:contacto@martindicovsky.com", label: "Email" },
+  { icon: Instagram, href: "https://www.instagram.com/coachmartin.ok/", label: "Instagram" },
+  { icon: Youtube, href: "https://www.youtube.com/channel/UCJExk0yg757uohGXuTtwOdg", label: "YouTube" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/martindicovsky/", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:coach@martindicovsky.com.ar", label: "Email" },
 ];
 
 const Footer = () => {
