@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 const CALENDLY_URL = "https://calendly.com/martindicovsky";
 
 const painPoints = [
-  "Priorizás a todos menos a vos mismo/a",
-  "Tus relaciones te drenan en lugar de nutrirte",
-  "Sentís que no merecés pedir lo que necesitás",
+  "Priorizás a todos menos a vos",
+  "Tus relaciones te drenan en vez de nutrirte",
   "Dependés de la aprobación de otros para sentirte bien",
   "Te cuesta poner límites sin sentir culpa",
-  "Sabés que hay algo más, pero no encontrás el camino",
+  "Sentís que los demás te usan",
+  "Procrastinás lo que es importante para vos",
+
 ];
 
 const PainSection = () => {
@@ -18,10 +19,11 @@ const PainSection = () => {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            ¿Te sentís <span className="text-primary">identificado/a</span>?
+          ¿Te pasan 
+          <span className="text-primary"> estas cosas</span>?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Estos son los síntomas de alguien que necesita reconectarse consigo mismo/a
+          Estos son los síntomas de alguien que necesita sanar su autoestima
           </p>
         </div>
 
@@ -41,8 +43,7 @@ const PainSection = () => {
 
         <div className="text-center">
           <p className="text-muted-foreground mb-6">
-            Si te sentís así, <span className="text-foreground font-semibold">no estás solo/a</span>. 
-            Y lo más importante: <span className="text-primary font-semibold">tiene solución</span>.
+          Si te sentís así, no es que te falte voluntad. <br /> Es que te falta un método para recuperar tu valor<span className="text-foreground font-semibold"> Y esto tiene solución.</span>
           </p>
           <Button 
             size="lg"
@@ -50,7 +51,7 @@ const PainSection = () => {
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             onClick={() => window.open(CALENDLY_URL, "_blank")}
           >
-            Quiero empezar mi transformación
+            Quiero recuperar mi confianza y mi valo
           </Button>
         </div>
       </div>
