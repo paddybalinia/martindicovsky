@@ -22,6 +22,7 @@ const AboutSection = () => {
                 <img 
                   src="/soy-martin-dicovsky.webp" 
                   alt="Martín Dicovsky - Coach profesional"
+                  title="Martín Dicovsky - Coach profesional"
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -63,6 +63,7 @@ const HeroSection = () => {
                 <img 
                   src="/martin-dicovsky-coach.webp" 
                   alt="Martín Dicovsky - Coach profesional"
+                  title="Martín Dicovsky - Coach profesional"
                   className="w-full h-full object-cover"
                 />
               </div>
