@@ -1,7 +1,7 @@
 import { ArrowRight, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const CALENDLY_URL = "https://calendly.com/martindicovsky";
+const CALENDLY_URL = "https://calendly.com/coach-martindicovsky/45";
 
 const HeroSection = () => {
   return (
@@ -16,20 +16,22 @@ const HeroSection = () => {
             {/* Authority badge */}
             <div className="inline-flex items-center gap-2 bg-muted/50 border border-border rounded-full px-4 py-2 text-sm">
               <Users className="w-4 h-4 text-primary" />
-              <span className="text-muted-foreground">+500 personas transformadas</span>
+              <span className="text-muted-foreground">+100 personas ya sanaron su autoestima</span>
             </div>
 
             {/* Main headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
+            
               Dejá de sentirte{" "}
-              <span className="text-gradient-cta">vacío/a</span>{" "}
-              aunque tengas todo "resuelto"
+              <span className="text-gradient-cta">invisible</span>{" "}
+              Recuperá tu confianza y conseguí los vínculos que realmente merecés
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-              El <span className="text-primary font-semibold">Método S.I.A.</span> te guía paso a paso 
-              para recuperar tu amor propio, construir relaciones sanas y priorizarte sin culpa.
+            
+
+              El <span className="text-primary font-semibold">Método S.I.A.</span> te guía paso a paso para recuperar tu amor propio, construir relaciones sanas y priorizarte sin culpa.
             </p>
 
             {/* CTA */}
@@ -46,7 +48,7 @@ const HeroSection = () => {
 
             {/* Urgency text */}
             <p className="text-sm text-muted-foreground">
-              <span className="text-secondary font-semibold">⚡ Cupos limitados</span> — Solo trabajo con 10 personas por mes
+              <span className="text-secondary font-semibold">⚡ Cupos limitados</span> — Solo sumo 5 personas nuevas cada mes
             </p>
           </div>
 
