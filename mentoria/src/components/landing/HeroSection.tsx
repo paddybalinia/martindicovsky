@@ -20,18 +20,18 @@ const HeroSection = () => {
             </div>
 
             {/* Main headline */}
-            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold leading-tight">
-            
-              Dejá de sentirte{" "}
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            Recuperá tu <span className="text-gradient-cta">confianza</span> y saná tus vínculos en <span className="text-gradient-cta">90 días</span>, sin pasar años en terapia
+              {/* Dejá de sentirte{" "}
               <span className="text-gradient-cta">invisible:</span>{" "}
-              Recuperá tu confianza y conseguí los vínculos que realmente merecés
+              Recuperá tu confianza y conseguí los vínculos que realmente merecés */}
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-            
+            Implementá el <span className="text-primary font-semibold">Método S.I.A.</span>: diseñado para personas que ya intentaron todo y siguen priorizando a los demás por encima de su propia felicidad.
 
-              El <span className="text-primary font-semibold">Método S.I.A.</span> te guía paso a paso para recuperar tu amor propio, construir relaciones sanas y priorizarte sin culpa.
+
             </p>
 
             {/* CTA */}
@@ -41,14 +41,15 @@ const HeroSection = () => {
                 className="bg-gradient-cta hover:opacity-90 text-primary-foreground font-semibold text-lg px-8 py-6 shadow-glow transition-all duration-300"
                 onClick={() => window.open(CALENDLY_URL, "_blank")}
               >
-                Agendá tu llamada gratuita
+                Agendar mi sesión de claridad
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
 
             {/* Urgency text */}
             <p className="text-sm text-muted-foreground">
-              <span className="text-secondary font-semibold">⚡ Cupos limitados</span> — Solo sumo 5 personas nuevas cada mes
+              <span className="text-secondary font-semibold">⚡ Solo 5 cupos</span>  disponibles por mes para asegurar resultados en el acompañamiento 1 a 1
+
             </p>
           </div>
 

@@ -26,7 +26,7 @@ const StickyCTA = () => {
         className="w-full bg-gradient-cta hover:opacity-90 text-primary-foreground font-semibold shadow-glow"
         onClick={() => window.open(CALENDLY_URL, "_blank")}
       >
-        Agendá tu llamada gratuita
+        Agendar mi sesión de claridad
         <ArrowRight className="ml-2 w-4 h-4" />
       </Button>
     </div>
