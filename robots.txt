@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /private/
+Disallow: /clase/
+Disallow: /mentoria/
 
 Sitemap: https://www.martindicovsky.com.ar/sitemap.xml
