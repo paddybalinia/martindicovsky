@@ -15,7 +15,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glow-box">
               <img
-                src="https://d1yei2z3i6k35z.cloudfront.net/11520480/69405e65044b3_DSC01057d.jpg"
+                src="/soy-martin-dicovsky.webp"
                 alt="Martín - Coach de desarrollo personal"
                 className="w-full h-full object-cover"
               />
