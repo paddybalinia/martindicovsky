@@ -40,10 +40,10 @@ const FAQSection = () => {
           <div className="text-center mb-12">
             <span className="text-primary font-medium mb-4 block">Preguntas Frecuentes</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              ¿Tienes dudas?
+            ¿Tenés dudas?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Aquí respondemos las preguntas más comunes
+            Te respondo las preguntas más comunes
             </p>
           </div>
 

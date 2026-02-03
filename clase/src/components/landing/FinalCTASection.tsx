@@ -45,11 +45,12 @@ const FinalCTASection = () => {
                 </div>
 
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-                  ¿Listo/a para dejar de <span className="text-gradient">sacrificarte</span> por los demás?
+                ¿Listo/a para recuperar <span className="text-gradient">tu paz</span> sin sentirte egoísta?
                 </h2>
 
                 <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-                  Únete a miles de personas que ya descubrieron cómo proteger su energía sin perder su esencia empática.
+                Unite a las <span className="text-gradient">más de 1,000 personas</span> que ya aprendieron a poner límites saludables conservando su esencia empática
+
                 </p>
 
                 <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
@@ -84,7 +85,7 @@ const FinalCTASection = () => {
                       "Enviando..."
                     ) : (
                       <>
-                        Sí, Quiero Ver la Clase Gratis
+                        Sí! Quiero aprender a poner límites sin culpa
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </>
                     )}
@@ -104,7 +105,7 @@ const FinalCTASection = () => {
                   ¡Excelente decisión!
                 </h3>
                 <p className="text-xl text-muted-foreground max-w-md mx-auto">
-                  Revisa tu correo electrónico. Te hemos enviado el acceso a la clase gratuita.
+                  Revisa tu correo electrónico. Te hemos enviado el acceso a la Guía Gratuita.
                 </p>
               </div>
             )}

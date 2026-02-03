@@ -28,9 +28,9 @@ const HeroSection = () => {
   };
 
   const benefits = [
-    "Entender por qué tu empatía nunca es el problema",
-    "Aprender a poner límites sin culpa ni remordimientos",
-    "Recuperar tu confianza y amor propio",
+    "Entender por qué tu <strong class='text-gradient'>empatía</strong> nunca es el problema",
+    "Aprender a poner <strong class='text-gradient'>límites sin culpa</strong>",
+    "Entender cómo recuperar tu <strong class='text-gradient'>confianza y amor propio</strong>",
   ];
 
   return (
@@ -48,7 +48,7 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Play className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Clase Gratuita</span>
+              <span className="text-sm font-medium text-primary">Guía Gratuita</span>
             </div>
 
             {/* Main headline */}
@@ -58,7 +58,7 @@ const HeroSection = () => {
                 <span className="text-gradient">agotando</span>?
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Descubre cómo poner límites saludables sin perder tu esencia empática ni sentir culpa.
+              En esta guía vas a:
               </p>
             </div>
 
@@ -71,7 +71,7 @@ const HeroSection = () => {
                   style={{ animationDelay: `${(index + 1) * 150}ms` }}
                 >
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span>{benefit}</span>
+                  <span dangerouslySetInnerHTML={{ __html: benefit }} />
                 </li>
               ))}
             </ul>
@@ -98,9 +98,9 @@ const HeroSection = () => {
             {!isSubmitted ? (
               <>
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
-                    Accede a la Clase Gratuita
-                  </h2>
+                  {/* <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+                    Accede a la Guía Gratuita
+                  </h2> */}
                   <p className="text-muted-foreground">
                     Ingresa tus datos y te envío el acceso directo a tu correo
                   </p>
@@ -142,7 +142,7 @@ const HeroSection = () => {
                       "Enviando..."
                     ) : (
                       <>
-                        Enviarme la Clase Gratis
+                        Enviarme la guía gratuita
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </>
                     )}
@@ -162,7 +162,7 @@ const HeroSection = () => {
                   ¡Listo! Revisa tu correo
                 </h3>
                 <p className="text-muted-foreground">
-                  Te hemos enviado el acceso a la clase gratuita. Si no lo ves, revisa tu carpeta de spam.
+                  Te hemos enviado el acceso a la Guía Gratuita. Si no lo ves, revisa tu carpeta de spam.
                 </p>
               </div>
             )}
