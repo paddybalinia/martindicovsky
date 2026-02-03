@@ -34,7 +34,7 @@ const WhatYouLearnSection = () => {
     <section className="section-padding">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-primary font-medium mb-4 block">En esta clase gratuita</span>
+          <span className="text-primary font-medium mb-4 block">En esta Guía Gratuita</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             Lo que vas a <span className="text-gradient">aprender</span>
           </h2>

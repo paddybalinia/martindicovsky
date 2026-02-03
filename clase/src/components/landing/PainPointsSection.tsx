@@ -5,22 +5,22 @@ const PainPointsSection = () => {
     {
       icon: Heart,
       title: "Das demasiado",
-      description: "Siempre estás disponible para los demás, pero cuando tú necesitas algo, no hay nadie.",
+      description: "Siempre estás para los demás, pero nadie está cuando lo necesitás (ni vos, para vos).",
     },
     {
       icon: Frown,
-      title: "Te sientes culpable",
-      description: "Cada vez que intentas decir 'no', la culpa te invade y terminas cediendo.",
+      title: "Te cuesta expresarte",
+      description: "Cada vez que querés decir que NO, o contar lo que sentís o pensás.",
     },
     {
       icon: AlertCircle,
-      title: "Estás agotado/a",
-      description: "Cargas con las emociones de todos y al final del día no te queda energía para ti.",
+      title: "Te agotás",
+      description: "Siendo el tacho de basura emocional de los demás.",
     },
     {
       icon: Shield,
-      title: "No sabes poner límites",
-      description: "Quieres protegerte, pero no sabes cómo hacerlo sin parecer frío/a o egoísta.",
+      title: "Te cuesta poner límites",
+      description: "No sabés cómo hacerlo sin sentirte egoísta o mala persona.",
     },
   ];
 
@@ -28,11 +28,11 @@ const PainPointsSection = () => {
     <section className="section-padding bg-secondary/30">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          {/* <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             ¿Te identificas con esto?
-          </h2>
+          </h2> */}
           <p className="text-xl text-muted-foreground">
-            Si eres una persona empática, probablemente has experimentado esto más de una vez...
+          Si sos una persona empática, seguro experimentaste esto más de una vez…
           </p>
         </div>
 

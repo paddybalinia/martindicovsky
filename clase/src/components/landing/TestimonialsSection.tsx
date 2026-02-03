@@ -3,32 +3,32 @@ import { Star, Quote } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "Es excelente la explicación Martín! Me identifiqué mucho. Los primeros 10 minutos me dieron ganas de llorar.",
+      quote: "Es excelente la explicación Martín! Me identifiqué mucho",
       name: "Barbara Strappaveccia",
       highlight: "Me identifiqué mucho",
     },
     {
-      quote: "Me encantó, muchas gracias por ponerlo en palabras. Resonó conmigo de una forma muy profunda.",
+      quote: "Me encantó, muchas gracias por ponerlo en palabras. Resonó conmigo",
       name: "Claudia Sanabria",
       highlight: "Resonó conmigo",
     },
     {
-      quote: "Muy buena su lectura, gracias a usted de a poco voy saliendo adelante. Ha sido transformador.",
+      quote: "Muy buena su lectura, gracias a usted de a poco voy saliendo adelante",
       name: "Lucía Vallejos",
       highlight: "Voy saliendo adelante",
     },
     {
-      quote: "Todo es útil, excelente explicando. Los primeros 10 minutos me dieron ganas de llorar. Gracias por esto.",
+      quote: "Todo es útil , excelente explicando, los primeros 10 minutos me dieron ganas de llorar. Gracias Martin por esto",
       name: "Abril Rossini",
       highlight: "Todo es útil",
     },
     {
-      quote: "Decidí escucharlo en un momento que esté tranquila y en silencio... Describiste muchas cosas de mi vida.",
+      quote: "Decidí escucharlo en un momento que esté tranquila y en silencio... Describiste muchas cosas de mi vida",
       name: "Laura Rose",
       highlight: "Describiste mi vida",
     },
     {
-      quote: "Grande Martín, muchas gracias. Tu contenido ha cambiado mi perspectiva completamente.",
+      quote: "Grande Martín, muchas gracias",
       name: "Martín Oxakis",
       highlight: "Cambió mi perspectiva",
     },
@@ -38,13 +38,13 @@ const TestimonialsSection = () => {
     <section className="section-padding bg-secondary/20">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-primary font-medium mb-4 block">Testimonios Reales</span>
+          {/* <span className="text-primary font-medium mb-4 block">Testimonios Reales</span> */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-            Lo que dicen quienes ya vieron la clase
+          Esto dijeron los que vieron la guía
           </h2>
-          <p className="text-xl text-muted-foreground">
+          {/* <p className="text-xl text-muted-foreground">
             Más de miles de personas han transformado su forma de relacionarse
-          </p>
+          </p> */}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
