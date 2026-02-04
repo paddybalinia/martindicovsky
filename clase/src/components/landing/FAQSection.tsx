@@ -12,8 +12,8 @@ const FAQSection = () => {
       answer: "Sí, 100% gratuita. No hay cargos ocultos ni compromisos. Solo necesitas registrarte con tu correo para recibir el acceso inmediato.",
     },
     {
-      question: "¿Cuánto dura la clase?",
-      answer: "La clase dura aproximadamente 25-30 minutos. Está diseñada para darte información valiosa y accionable en poco tiempo, respetando tu agenda.",
+      question: "¿cuanto dura la clase?",
+      answer: "La clase dura menos de 30 minutos. Está diseñada para darte información valiosa y accionable en poco tiempo, sin humo.",
     },
     {
       question: "¿Esta clase es para mí?",
