@@ -92,7 +92,7 @@ const HeroSection = () => {
           {/* Right content - Form */}
           <div 
             id="signup-form"
-            className="glass-card rounded-2xl p-8 md:p-10 glow-box opacity-0 animate-fade-up"
+            className="glass-card rounded-2xl p-8 box-border xl:p-8 md:p-10 glow-box opacity-0 animate-fade-up w-full max-w-full overflow-hidden"
             style={{ animationDelay: "300ms" }}
           >
             {!isSubmitted ? (

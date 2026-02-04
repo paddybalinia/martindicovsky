@@ -78,15 +78,15 @@ const FinalCTASection = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full text-lg py-7 font-semibold animate-pulse-glow"
+                    className="w-full text-sm lg:text-lg py-7 font-semibold animate-pulse-glow whitespace-normal lg:whitespace-nowrap leading-tight"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       "Enviando..."
                     ) : (
                       <>
-                        Sí! Quiero aprender a poner límites sin culpa
-                        <ArrowRight className="ml-2 w-5 h-5" />
+                        <span className="inline-block">Sí! Quiero aprender a poner límites sin culpa</span>
+                        <ArrowRight className="ml-2 w-5 h-5 inline-block flex-shrink-0" />
                       </>
                     )}
                   </Button>
