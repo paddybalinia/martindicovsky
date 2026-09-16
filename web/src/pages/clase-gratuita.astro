@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import { beneficiosClase, linkTitles, site } from "../content/site";
+import { getClaseJsonLd } from "../lib/jsonld";
+
+const title = "Clase gratuita: autoestima y límites | Martín Dicovsky";
+const description =
+  "Clase gratuita online para personas empáticas: por qué te cuesta poner límites, el costo de complacer y pasos concretos para priorizarte. Mirála cuando quieras.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  path="/clase-gratuita"
+  jsonLd={getClaseJsonLd(description)}
+>
+  <Breadcrumbs items={[{ label: "Clase gratuita" }]} />
+  <PageHero
+    eyebrow="Gratis · online"
+    title="Clase gratuita para empáticos: dejá de complacer y empezá a priorizarte"
+    intro="Una clase corta y directa para entender el patrón que te lleva a priorizar a todos antes que a vos, y cómo cambiarlo a partir de hoy mismo."
+  >
+    <a class="btn btn--outline btn--cta" href={site.claseGratuita} title={linkTitles.claseGratuita} target="_blank" rel="noopener noreferrer">
+      Quiero ver la clase gratuita
+    </a>
+  </PageHero>
+
+  <Section tone="card">
+    <div class="grid grid-gap-10 split-2">
+      <div>
+        <p class="eyebrow">Qué te llevás</p>
+        <h2 class="h2">Tres cosas concretas</h2>
+        <ul class="prose-warm mt-4">
+          {
+            beneficiosClase.map((b) => (
+              <li>
+                <strong>{b.t}:</strong> {b.d}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Para quién es</p>
+        <h2 class="h2">Si te reconocés acá, esta clase es para vos</h2>
+        <ul class="prose-warm mt-4">
+          <li>
+            Sos la persona a la que todos llaman cuando tienen un problema, pero cuando vos
+            necesitás algo, sentís que estás solo/a.
+          </li>
+          <li>
+            Te guardás lo que pensás, evitás el conflicto a toda costa y postergás tus propios
+            proyectos para no incomodar a nadie.
+          </li>
+          <li>
+            Querés entender qué te pasa y dar un primer paso firme antes de comprometerte con un
+            proceso de trabajo 1:1.
+          </li>
+        </ul>
+        <div class="mt-6">
+          <a class="btn btn--primary btn--cta" href={site.claseGratuita} title={linkTitles.claseGratuita} target="_blank" rel="noopener noreferrer">
+            Quiero ver la clase gratuita
+          </a>
+        </div>
+        <p class="text-sm muted mt-4">
+          (Al hacer clic, vas a completar tu nombre y email para acceder inmediatamente a la
+          clase y verla cuando quieras).
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <div class="max-w-2xl">
+      <p class="eyebrow">Después de la clase</p>
+      <h2 class="h2">Si querés ir más profundo</h2>
+      <p class="text-base muted mt-4">
+        Si buscás un cambio de raíz y alguien que te acompañe durante todo el proceso, el paso
+        siguiente es el programa 1:1 de 90 días.
+      </p>
+      <div class="mt-6">
+        <a class="btn btn--primary btn--cta" href={site.calendly} title={linkTitles.calendly} target="_blank" rel="noopener noreferrer">
+          Agendar mi videollamada con Martín
+        </a>
+      </div>
+    </div>
+  </Section>
+</Layout>

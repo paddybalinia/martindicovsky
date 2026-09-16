@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import Photo from "../components/Photo.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { linkTitles } from "../content/site";
+
+const title = "Quién es Martín Dicovsky, coach para empáticos";
+const description =
+  "La historia de Martín Dicovsky: de una relación tóxica y un trabajo que no lo llenaba al Método S.I.A. Coach para personas empáticas, online y en Pilar.";
+---
+
+<Layout title={title} description={description} path="/sobre-mi" ogType="profile">
+  <Breadcrumbs items={[{ label: "Sobre mí" }]} />
+  <PageHero
+    eyebrow="Sobre mí"
+    title="¿Quién es Martín Dicovsky?"
+    intro="No enseño lo que leí. Enseño lo que tuve que aprender. Gracias a dolorosas experiencias, al coaching, la neurociencia y psicología. Comparto las herramientas que me ayudaron a sanar mi autoestima, dejar de complacer al resto, poner límites sin culpa y dejar de procrastinar."
+  />
+
+  <Section tone="card">
+    <div class="grid grid-gap-12 split-sobre">
+      <div class="prose-warm max-w-2xl">
+        <h2>2019: El cambió empezó con una decisión</h2>
+        <p>
+          Durante años fui el que siempre se adaptaba. El que evitaba el conflicto a toda costa,
+          el que sostenía vínculos desgastantes y el que se convencía de que si daba “un poco
+          más”, el otro iba a cambiar. Hasta que el cansancio y la frustración me pasaron
+          factura.
+        </p>
+        <p>
+          En 2019 corté una relación tóxica, renuncié a mi trabajo y me mudé a Estocolmo
+          (Suecia) para trabajar de guía turístico a pesar de sentir terror de hablar en
+          público.
+        </p>
+        <h2>Del entender al hacer</h2>
+        <p>
+          En Londres, formándome con Tony Robbins (UPW), entendí la raíz de todo: mi problema no
+          era la falta de empatía, era la falta total de autoestima y el miedo al rechazo.
+        </p>
+        <p>
+          Los siguientes años me capacité como Life Coach (Insight Coaching, EEUU) y Coach
+          Organizacional (Universidad del Salvador, Argentina) para acompañar a quienes hoy
+          están en el mismo lugar donde yo estuve. Y creé el Método S.I.A. que yo mismo utilicé
+          para recuperar mi confianza y poder tener relaciones sanas y recíprocas.
+        </p>
+        <h2>Cómo trabajo</h2>
+        <p>
+          Sin discursos motivacionales y sin promesas mágicas. Trabajamos sobre tu realidad de
+          hoy: los vínculos que te agotan, las conversaciones que estás evitando y las decisiones
+          que venís postergando. Aplicamos mini hábitos efectivos, y te acompaño durante todo el
+          proceso.
+        </p>
+        <p>
+          Hoy trabajo de dos maneras:{" "}
+          <a href="/coach-para-empaticos" title={linkTitles.coaching}>coaching 1:1 online con el Método S.I.A.</a>{" "}
+          y{" "}
+          <a href="/capacitaciones" title={linkTitles.capacitaciones}>capacitaciones ejecutivas presenciales</a>{" "}
+          para empresas de Zona Norte y CABA.
+        </p>
+      </div>
+      <div class="space-y-6">
+        <Photo
+          src="/images/soy-martin-dicovsky.webp"
+          alt="Retrato de Martín Dicovsky, coach para personas empáticas"
+          title="Martín Dicovsky, coach para personas empáticas"
+          width={896}
+          height={896}
+        />
+        <div class="box">
+          <p class="eyebrow">En números</p>
+          <ul class="space-y-2 text-sm muted">
+            <li>Programa Método S.I.A.: 90 días de trabajo 1:1 online.</li>
+            <li>Alcance: clientes en Latinoamérica y Europa.</li>
+            <li>
+              Capacitaciones Ejecutivas: formación presencial en liderazgo y comunicación para
+              empresas en Zona Norte y CABA (Bs. As.).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <CtaBand
+    title="Veamos cómo podría ayudarte"
+    text="Agendá una videollamada. Contame tu situación y vemos si el Método S.I.A. es lo que estás necesitando para empezar a priorizarte."
+  />
+</Layout>

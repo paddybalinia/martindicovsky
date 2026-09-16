@@ -1,0 +1,189 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import Faq from "../components/Faq.astro";
+import CtaBand from "../components/CtaBand.astro";
+import {
+  faqPrograma,
+  linkTitles,
+  noEsPara,
+  origin,
+  paraQuien,
+  pasos,
+  site,
+  testimonios,
+} from "../content/site";
+import { faqSchemas, getCoachingServiceJsonLd } from "../lib/jsonld";
+
+const title = "Método S.I.A.: coaching 1:1 de 90 días | Martín Dicovsky";
+const description =
+  "Programa de coaching 1:1 de 90 días para personas empáticas. Aprendé a poner límites sin culpa y a construir relaciones sanas, 100% online. Agendá tu llamada.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  path="/coach-para-empaticos"
+  jsonLd={[
+    getCoachingServiceJsonLd(description),
+    faqSchemas.programa(`${origin}/coach-para-empaticos`),
+  ]}
+>
+  <Breadcrumbs items={[{ label: "Coaching para empáticos" }]} />
+  <PageHero
+    eyebrow="Programa 1:1 · 90 días · online"
+    title="Método S.I.A.: recuperá tu confianza y construí relaciones sanas en 90 días"
+    intro="Si sos de los que siempre está para los demás y nunca para vos, el problema no es tu sensibilidad. Es lo que aprendiste a hacer con ella."
+  >
+    <div class="stack-3">
+      <a class="btn btn--primary btn--cta" href={site.calendly} title={linkTitles.calendly} target="_blank" rel="noopener noreferrer">
+        Quiero agendar mi llamada de admisión
+      </a>
+      <a class="btn btn--outline btn--cta-tight" href={site.claseGratuita} title={linkTitles.claseGratuita} target="_blank" rel="noopener noreferrer">
+        Ver Clase Para Empáticos
+      </a>
+    </div>
+  </PageHero>
+
+  <Section tone="card">
+    <div class="grid grid-gap-12 split-2">
+      <div>
+        <p class="eyebrow">El problema</p>
+        <h2 class="h2">Complacer dejó de ser una virtud</h2>
+        <div class="prose-warm mt-4">
+          <p>
+            Aprendiste que si sos bueno, si no molestás, si te adaptás, te van a querer. Y
+            funcionó por un tiempo: te volviste confiable, atento, el que sostiene. Pero el
+            precio se paga en silencio: te cuesta pedir, te cuesta decir que no, y cuando algo
+            te lastima lo dejás pasar para no incomodar.
+          </p>
+          <p>
+            Con los años eso se ordena en un patrón: baja autoestima, vínculos que desgastan y
+            una sensación permanente de estar viviendo la vida de otros. En lo profesional
+            rendís; en lo personal te sentís chico.
+          </p>
+          <p>
+            Ese patrón se puede trabajar. No borrando tu empatía, sino poniéndola de tu lado.
+          </p>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Para quién es este programa</p>
+        <ul class="list-plain mt-2">
+          {
+            paraQuien.map((item) => (
+              <li>
+                <svg class="icon icon--secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <h3 class="h3 mt-8">Para quién NO es</h3>
+        <ul class="list-plain mt-3">
+          {
+            noEsPara.map((item) => (
+              <li class="muted">
+                <svg class="icon icon--destructive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <p class="eyebrow">Cómo trabajamos durante 90 días: sin humo ni soluciones mágicas</p>
+    <h2 class="h2">EL MÉTODO S.I.A.: tres etapas, 90 días, un plan concreto</h2>
+    <div class="grid grid-md-3 mt-10">
+      {
+        pasos.map((p) => (
+          <article class="card">
+            <span class="step-n">{p.n}</span>
+            <h3 class="h3 mt-3">{p.title}</h3>
+            <p class="text-sm muted mt-2" style="line-height: 1.625">{p.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="muted">
+    <div class="grid grid-gap-10 split-2">
+      <div>
+        <p class="eyebrow">Qué vas a lograr</p>
+        <h2 class="h2">Resultados que se notan en tu vida real</h2>
+        <ul class="prose-warm mt-4">
+          <li>Poder sostener un “no” sin sentir que rompés el vínculo.</li>
+          <li>Dar conversaciones que hoy evitás, con claridad y sin agresión.</li>
+          <li>Reconocer temprano las relaciones que te desgastan.</li>
+          <li>Tomar decisiones desde tu criterio y no desde el miedo a decepcionar.</li>
+          <li>Una autoestima que no dependa de la aprobación del otro.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Por qué este enfoque funciona</p>
+        <h2 class="h2">Porque yo hice el camino primero</h2>
+        <div class="prose-warm mt-4">
+          <p>
+            En 2019 salí de una relación tóxica, dejé mi trabajo y me mudé a Suecia. Me formé con referentes internacionales, entre ellos en el evento UPW de Tony Robbins en
+            Londres. No trabajo desde la teoría: trabajo desde lo que tuve que aprender a hacer.
+          </p>
+          <p>
+            Por eso el programa es concreto y accionable: 90 días, foco en tu vida concreta, y una
+            práctica por semana que te devuelva evidencia de que podés.{" "}
+            <a href="/sobre-mi" title={linkTitles.sobreMi}>Conocé mi historia completa</a>.
+          </p>
+        </div>
+        <span class="badge">Programa de 90 días</span>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <p class="eyebrow">Personas que ya lo hicieron</p>
+    <h2 class="h2">Testimonios del programa</h2>
+    <div class="grid grid-md-2 mt-8">
+      {
+        testimonios.slice(0, 2).map((t) => (
+          <TestimonialCard name={t.name} quote={t.quote} role={t.role} />
+        ))
+      }
+    </div>
+    <p class="text-sm mt-6">
+      <a class="link-accent" href="/testimonios" title={linkTitles.testimonios}>Ver todos los testimonios</a>
+    </p>
+  </Section>
+
+  <Section tone="card">
+    <div class="max-w-3xl">
+      <p class="eyebrow">Preguntas frecuentes del programa</p>
+      <h2 class="h2">Antes de agendar, resolvamos esto</h2>
+      <div class="mt-6">
+        <Faq items={faqPrograma} />
+      </div>
+      <p class="text-sm muted mt-6">
+        ¿Buscás la oferta presencial para equipos u organizaciones? Eso es otra cosa:{" "}
+        <a class="link-accent" href="/capacitaciones" title={linkTitles.capacitaciones}>
+          capacitaciones ejecutivas presenciales en Zona Norte y CABA
+        </a>
+        . El coaching 1:1 de esta página es 100% online.
+      </p>
+    </div>
+  </Section>
+
+  <CtaBand
+    title="Empecemos por una conversación honesta"
+    text={`Una videollamada sin costo para ver dónde estás y si este proceso es para vos. ${site.claim}`}
+  />
+</Layout>

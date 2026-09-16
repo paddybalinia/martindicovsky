@@ -1,0 +1,117 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Analytics from "../components/Analytics/Analytics.astro";
+import { negocio, origin } from "../content/site";
+import { GA_TRACKING_ID } from "../config/analytics";
+import {
+  buildBreadcrumbListFromPath,
+  getLocalBusinessJsonLd,
+  getPersonJsonLd,
+  schemaIsBreadcrumbList,
+  type Schema,
+} from "../lib/jsonld";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogType?: string;
+  noIndex?: boolean;
+  jsonLd?: Schema | Schema[];
+}
+
+const {
+  title,
+  description,
+  path,
+  ogType = "website",
+  noIndex = false,
+  jsonLd,
+} = Astro.props;
+
+const canonical = path === "/" ? `${origin}/` : `${origin}${path}`;
+const ogImage = `${origin}/og-martin-dicovsky.png`;
+const ogAlt = "Martín Dicovsky — Coach para personas empáticas";
+const analyticsEnabled = Boolean(GA_TRACKING_ID && GA_TRACKING_ID !== "G-XXXXXXXXXX");
+
+const extraJsonLd: Schema[] = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+const alreadyHasBreadcrumbs = extraJsonLd.some(schemaIsBreadcrumbList);
+const autoBreadcrumbs = buildBreadcrumbListFromPath(path);
+if (!alreadyHasBreadcrumbs && autoBreadcrumbs) {
+  extraJsonLd.push(autoBreadcrumbs);
+}
+
+const globalSchemas: Schema[] = noIndex
+  ? []
+  : [getPersonJsonLd(), getLocalBusinessJsonLd(), ...extraJsonLd];
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {
+      analyticsEnabled && (
+        <>
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+          <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+        </>
+      )
+    }
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Martín Dicovsky" />
+    <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+    {!noIndex && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+    />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Martín Dicovsky" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
+    <link rel="image_src" href={ogImage} />
+    <meta name="geo.region" content={negocio.geo.region} />
+    <meta name="geo.placename" content={negocio.geo.placename} />
+    <meta name="geo.position" content={`${negocio.geo.latitude};${negocio.geo.longitude}`} />
+    <meta name="ICBM" content={`${negocio.geo.latitude}, ${negocio.geo.longitude}`} />
+    {
+      globalSchemas.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
+    }
+  </head>
+  <body>
+    <div class="site">
+      <Header />
+      <main class="site-main">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    {analyticsEnabled && <Analytics />}
+  </body>
+</html>

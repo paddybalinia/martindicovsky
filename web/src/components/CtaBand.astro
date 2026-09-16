@@ -1,0 +1,30 @@
+---
+import { linkTitles, site } from "../content/site";
+
+interface Props {
+  title: string;
+  text?: string;
+}
+
+const { title, text } = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="container-page cta-band__inner">
+    <h2>{title}</h2>
+    {text && <p>{text}</p>}
+    <div class="cta-band__actions">
+      <slot>
+        <a
+          class="btn btn--on-secondary"
+          href={site.calendly}
+          title={linkTitles.calendly}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Agendar videollamada
+        </a>
+      </slot>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { linkTitles, site } from "../content/site";
+import { getPodcastJsonLd } from "../lib/jsonld";
+
+const title = "Podcast de autoestima y límites | Martín Dicovsky";
+const description =
+  "Podcast para personas empáticas sobre autoestima, límites y relaciones sanas. Escuchá Protagonistas en Spotify y empezá a priorizarte sin culpa hoy.";
+---
+
+<Layout title={title} description={description} path="/podcast" jsonLd={getPodcastJsonLd()}>
+  <Breadcrumbs items={[{ label: "Podcast" }]} />
+  <PageHero
+    eyebrow="Podcast"
+    title="Conversaciones para dejar de complacer"
+    intro="Episodios cortos sobre autoestima, límites y vínculos, pensados para escuchar mientras hacés otra cosa y quedarte pensando después."
+  >
+    <a class="btn btn--link btn--cta" href={site.spotify} title={linkTitles.spotify} target="_blank" rel="noopener noreferrer">
+      Escuchar el podcast
+    </a>
+  </PageHero>
+
+  <Section tone="card">
+    <div class="grid grid-gap-10 split-2">
+      <div>
+        <p class="eyebrow">Para qué oyente es</p>
+        <h2 class="h2">Si te cuesta priorizarte, empezá por acá</h2>
+        <ul class="prose-warm mt-4">
+          <li>Querés entender tus patrones sin entrar todavía en un proceso.</li>
+          <li>Buscás ideas aplicables, no teoría.</li>
+          <li>Preferís escuchar antes que leer.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Últimos episodios</p>
+        <h2 class="h2">Escuchá desde acá</h2>
+        <div class="spotify mt-6">
+          <iframe
+            title="Protagonistas Podcast en Spotify"
+            src="https://open.spotify.com/embed/show/0TWe0P99qUISVhRZb7Ckyh"
+            width="100%"
+            height="352"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="mt-6">
+          <a class="btn btn--primary btn--cta" href={site.spotify} title={linkTitles.spotify} target="_blank" rel="noopener noreferrer">
+            Escuchar en Spotify
+          </a>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <CtaBand
+    title="Veamos cómo podría ayudarte"
+    text="Agendá una videollamada. Contame tu situación y vemos si el Método S.I.A. es lo que estás necesitando para empezar a priorizarte."
+  />
+</Layout>

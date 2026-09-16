@@ -1,0 +1,74 @@
+---
+import { GA_TRACKING_ID, analyticsConfig } from "../../config/analytics";
+
+const shouldRender = GA_TRACKING_ID && GA_TRACKING_ID !== "G-XXXXXXXXXX";
+---
+
+{
+  shouldRender && (
+    <script is:inline define:vars={{ GA_TRACKING_ID, analyticsConfig }}>
+      (function () {
+        function initGtag() {
+          if (window.__gtagInit) return;
+          window.__gtagInit = true;
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_TRACKING_ID;
+          script.onload = function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", GA_TRACKING_ID, analyticsConfig);
+            window.gtag = gtag;
+            window.dispatchEvent(new Event("gtag-ready"));
+          };
+          document.head.appendChild(script);
+        }
+        function scheduleGtag() {
+          var started = false;
+          var interactionEvents = ["pointerdown", "keydown", "touchstart", "scroll"];
+          function boot() {
+            if (started) return;
+            started = true;
+            interactionEvents.forEach(function (evt) {
+              window.removeEventListener(evt, boot, listenerOptions);
+            });
+            initGtag();
+          }
+          var listenerOptions = { passive: true, once: true };
+          interactionEvents.forEach(function (evt) {
+            window.addEventListener(evt, boot, listenerOptions);
+          });
+          window.setTimeout(boot, 7000);
+        }
+        scheduleGtag();
+
+        function sendPageView() {
+          if (typeof window.gtag === "undefined") return;
+          window.gtag("event", "page_view", {
+            page_title: document.title,
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+          });
+        }
+        function whenGtagReady(fn) {
+          if (typeof window.gtag !== "undefined") fn();
+          else window.addEventListener("gtag-ready", fn, { once: true });
+        }
+        function bootFirstPageView() {
+          whenGtagReady(sendPageView);
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", bootFirstPageView);
+        } else {
+          bootFirstPageView();
+        }
+        document.addEventListener("astro:page-load", function () {
+          whenGtagReady(sendPageView);
+        });
+      })();
+    </script>
+  )
+}

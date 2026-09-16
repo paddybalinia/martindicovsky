@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { origin, testimonios } from "../content/site";
+
+const title = "Testimonios reales del Método S.I.A. | Martín Dicovsky";
+const description =
+  "Opiniones de clientes del programa de 90 días: cómo recuperaron confianza, pusieron límites y cambiaron sus relaciones con el coaching de Martín Dicovsky.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  path="/testimonios"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Testimonios",
+    url: `${origin}/testimonios`,
+    description,
+    about: { "@id": `${origin}/#localbusiness` },
+  }}
+>
+  <Breadcrumbs items={[{ label: "Testimonios" }]} />
+  <PageHero
+    eyebrow="Opiniones"
+    title="Resultados reales, de clientes reales"
+    intro="Lo que dicen las personas que hicieron el proceso 1:1 conmigo."
+  />
+  <Section tone="card">
+    <div class="grid grid-md-2">
+      {
+        testimonios.map((t) => (
+          <TestimonialCard name={t.name} quote={t.quote} />
+        ))
+      }
+    </div>
+  </Section>
+  <CtaBand
+    title="Veamos cómo podría ayudarte"
+    text="Agendá una videollamada. Contame tu situación y vemos si el Método S.I.A. es lo que estás necesitando para empezar a priorizarte."
+  />
+</Layout>
