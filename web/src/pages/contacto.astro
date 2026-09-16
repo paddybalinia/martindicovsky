@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import { site } from "../content/site";
+
+const title = "Contacto — Martín Dicovsky, coach para personas empáticas";
+const description =
+  "Escribime por email o WhatsApp. Coaching 1:1 online (Método S.I.A., 90 días) y capacitaciones ejecutivas presenciales en Zona Norte y CABA.";
+
+const redes = [
+  ["Instagram", site.instagram],
+  ["TikTok", site.tiktok],
+  ["LinkedIn", site.linkedin],
+  ["Spotify (Protagonistas Podcast)", site.spotify],
+] as const;
+---
+
+<Layout title={title} description={description} path="/contacto">
+  <Breadcrumbs items={[{ label: "Contacto" }]} />
+  <PageHero
+    eyebrow="Contacto"
+    title="Hablemos de tu situación"
+    intro="Contame en dos líneas qué te está pasando o qué necesita tu equipo, y te respondo de forma directa."
+  />
+
+  <Section tone="card">
+    <div class="max-w-2xl">
+      <div class="space-y-8">
+        <div>
+          <p class="eyebrow">Contacto directo</p>
+          <ul class="space-y-3 text-base">
+            <li class="contact-row">
+              <svg class="icon icon--secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+            </li>
+            <li class="contact-row">
+              <svg class="icon icon--secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+              </svg>
+              <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+                WhatsApp: {site.whatsappLabel}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="eyebrow">Redes</p>
+          <ul class="social-links">
+            {
+              redes.map(([label, href]) => (
+                <li>
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="box">
+          <p class="eyebrow">Acceso directo</p>
+          <p class="text-base">
+            Si ya sabés que querés avanzar con el coaching 1:1, podés{" "}
+            <a class="link-accent" href={site.calendly} target="_blank" rel="noopener noreferrer">
+              agendar la videollamada directamente desde el calendario
+            </a>{" "}
+            o revisar las{" "}
+            <a class="link-accent" href="/preguntas-frecuentes">Preguntas Frecuentes</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+</Layout>

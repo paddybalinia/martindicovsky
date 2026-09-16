@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import Faq from "../components/Faq.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { faqGeneral } from "../content/site";
+
+const title = "Preguntas frecuentes sobre el coaching | Martín Dicovsky";
+const description =
+  "Metodología, diferencia entre coaching y terapia, modalidad de las sesiones, cómo es la primera llamada y confidencialidad.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  path="/preguntas-frecuentes"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqGeneral.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  }}
+>
+  <Breadcrumbs items={[{ label: "Preguntas frecuentes" }]} />
+  <PageHero
+    eyebrow="Preguntas frecuentes"
+    title="Todo lo que solés preguntar antes de empezar"
+    intro="Si tu duda no está acá, escribime y te respondo yo."
+  />
+  <Section tone="card">
+    <div class="max-w-3xl">
+      <Faq items={faqGeneral} />
+      <p class="text-sm muted mt-8">
+        ¿Tenés otra pregunta?{" "}
+        <a class="link-accent" href="/contacto">Escribime desde contacto</a>.
+      </p>
+    </div>
+  </Section>
+  <CtaBand
+    title="Veamos cómo podría ayudarte"
+    text="Agendá una videollamada. Contame tu situación y vemos si el Método S.I.A. es lo que estás necesitando para empezar a priorizarte."
+  />
+</Layout>

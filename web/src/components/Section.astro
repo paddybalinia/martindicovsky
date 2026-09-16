@@ -1,0 +1,14 @@
+---
+interface Props {
+  tone?: "default" | "muted" | "card";
+}
+
+const { tone = "default" } = Astro.props;
+const cls = tone === "default" ? "section" : `section section--${tone}`;
+---
+
+<section class={cls}>
+  <div class="container-page">
+    <slot />
+  </div>
+</section>

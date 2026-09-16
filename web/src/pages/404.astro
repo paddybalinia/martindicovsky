@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Página no encontrada — Martín Dicovsky";
+const description = "Esta página no existe. Volvé al inicio o recorré el coaching, las capacitaciones o el contacto.";
+---
+
+<Layout title={title} description={description} path="/404" noIndex>
+  <div class="not-found">
+    <div>
+      <p class="not-found__code">404</p>
+      <h1>Esta página no existe</h1>
+      <p>Puede que el enlace esté viejo o que la hayamos movido. Te dejo los caminos más útiles.</p>
+      <div class="not-found__links">
+        <a href="/">Inicio</a>
+        <a href="/coach-para-empaticos">Coaching para empáticos</a>
+        <a href="/capacitaciones">Capacitaciones</a>
+        <a href="/contacto">Contacto</a>
+      </div>
+    </div>
+  </div>
+</Layout>

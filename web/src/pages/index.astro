@@ -1,0 +1,204 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Photo from "../components/Photo.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import Faq from "../components/Faq.astro";
+import CtaBand from "../components/CtaBand.astro";
+import {
+  faqPrograma,
+  origin,
+  paraQuien,
+  pasos,
+  site,
+  testimonios,
+} from "../content/site";
+
+const title = "Coach para Empáticos | Autoestima y Relaciones Sanas — Martín Dicovsky";
+const description =
+  "Recuperá tu confianza y aprendé a priorizarte sin culpa con el Método S.I.A.: coaching 1:1 online de 90 días y capacitaciones ejecutivas en Zona Norte y CABA.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  path="/"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Martín Dicovsky",
+    jobTitle: "Coach y speaker",
+    description: site.claim,
+    areaServed: [
+      { "@type": "Country", name: "Argentina" },
+      { "@type": "Place", name: "Latinoamérica" },
+      { "@type": "Place", name: "Europa" },
+    ],
+    url: `${origin}/`,
+  }}
+>
+  <section class="hero-home">
+    <div class="container-page hero-home__grid">
+      <div>
+        <span class="badge">Programa 1:1 de 90 días · online</span>
+        <h1 class="h1 mt-5">
+          Recuperá tu confianza y aprendé a priorizarte sin culpa para construir relaciones
+          sanas en 90 días
+        </h1>
+        <p class="lead mt-5 max-w-xl">
+          Con el Método S.I.A, vas a aprender a recuperar tu confianza y atraer vínculos donde
+          realmente te valoren.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--primary btn--cta" href={site.calendly} target="_blank" rel="noopener noreferrer">
+            Quiero agendar mi llamada de admisión
+          </a>
+        </div>
+        <div class="hero-links">
+          <a class="btn btn--link btn--cta-tight" href={site.claseGratuita} target="_blank" rel="noopener noreferrer">
+            Ver Clase Para Empáticos
+          </a>
+          <a class="btn btn--link btn--cta" href={site.spotify} target="_blank" rel="noopener noreferrer">
+            Escuchar el podcast
+          </a>
+        </div>
+      </div>
+      <Photo
+        src="/images/soy-martin-dicovsky.webp"
+        alt="Martín Dicovsky, coach para personas empáticas"
+        width={896}
+        height={896}
+        priority
+      />
+    </div>
+  </section>
+
+  <Section tone="card">
+    <p class="eyebrow">Para quién es esto</p>
+    <h2 class="h2 max-w-2xl">Si te identificás con estas frases, estás en el lugar correcto:</h2>
+    <ul class="list-check list-check--boxed mt-8">
+      {
+        paraQuien.map((item) => (
+          <li>
+            <svg class="icon icon--secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <Section>
+    <p class="eyebrow">El método</p>
+    <h2 class="h2">EL MÉTODO S.I.A.</h2>
+    <p class="lead mt-3">Cómo trabajamos durante 90 días: sin humo ni soluciones mágicas</p>
+    <div class="grid grid-md-3 mt-10">
+      {
+        pasos.map((p) => (
+          <article class="card">
+            <span class="step-n">{p.n}</span>
+            <h3 class="h3 mt-3">{p.title}</h3>
+            <p class="text-sm muted mt-2" style="line-height: 1.625">{p.text}</p>
+          </article>
+        ))
+      }
+    </div>
+    <p class="text-sm mt-8">
+      <a class="link-accent" href="/coach-para-empaticos">Conocé el programa completo de 90 días</a>
+    </p>
+  </Section>
+
+  <Section tone="muted">
+    <p class="eyebrow">Opiniones</p>
+    <h2 class="h2">Resultados reales, de clientes reales:</h2>
+    <div class="grid grid-md-2 grid-lg-3 mt-8">
+      {
+        testimonios.slice(0, 3).map((t) => (
+          <TestimonialCard name={t.name} quote={t.quote} />
+        ))
+      }
+    </div>
+    <p class="text-sm mt-8">
+      <a class="link-accent" href="/testimonios">Ver más testimonios</a>
+    </p>
+  </Section>
+
+  <Section tone="card">
+    <div class="split-about">
+      <Photo
+        src="/images/martin-dicovsky-coach.webp"
+        alt="Martín Dicovsky, coach y capacitador"
+        width={892}
+        height={1192}
+      />
+      <div>
+        <p class="eyebrow">Sobre mí</p>
+        <h2 class="h2">No te enseño lo que leí. Te enseño lo que viví.</h2>
+        <div class="prose-warm mt-4">
+          <p>
+            Sé lo que es estar en un vínculo que te apaga, trabajar de algo que no te llena y
+            sentir que te postergás por complacer al resto. En 2019 corté con una relación
+            tóxica, dejé mi trabajo y cambié mi vida por completo. Me formé con referentes
+            internacionales para convertir mi propio proceso en un método práctico y sin vueltas.
+          </p>
+          <p>
+            Hoy trabajo 1:1 online con personas de todo el mundo que decidieron dejar de mendigar
+            atención, poner límites sin culpa y recuperar su confianza.
+          </p>
+        </div>
+        <p class="text-sm mt-4">
+          <a class="link-accent" href="/sobre-mi">Conocer mi historia completa</a>
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <div class="split-faq">
+      <div>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 class="h2">Lo que necesitás saber antes de empezar</h2>
+        <p class="text-sm mt-4">
+          <a class="link-accent" href="/preguntas-frecuentes">Ver todas las preguntas frecuentes</a>
+        </p>
+      </div>
+      <Faq items={faqPrograma} />
+    </div>
+  </Section>
+
+  <Section tone="muted">
+    <div class="two-cards">
+      <article class="card">
+        <h2 class="card-title">Coaching 1:1 online</h2>
+        <p class="text-sm muted mt-2">
+          Método S.I.A. de 90 días. Para recuperar tu confianza, poner límites sin culpa y
+          construir relaciones sanas.
+        </p>
+        <div class="mt-5">
+          <a class="btn btn--primary btn--md" href={site.calendly} target="_blank" rel="noopener noreferrer">
+            Agendar videollamada para analizar mi caso
+          </a>
+        </div>
+      </article>
+      <article class="card">
+        <h2 class="card-title">Capacitaciones Ejecutivas</h2>
+        <p class="text-sm muted mt-2">
+          Para empresas, equipos e instituciones en Zona Norte y CABA (Argentina).
+        </p>
+        <div class="stack-4 mt-5">
+          <a class="btn btn--outline btn--md" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+            Pedir presupuesto
+          </a>
+          <a class="link-accent text-sm" href="/capacitaciones">Ver capacitaciones</a>
+        </div>
+      </article>
+    </div>
+  </Section>
+
+  <CtaBand
+    title="Veamos cómo podría ayudarte"
+    text="Agendá una videollamada. Contame tu situación, y vemos si el Método S.I.A. es lo que estás necesitando para empezar a priorizarte."
+  />
+</Layout>

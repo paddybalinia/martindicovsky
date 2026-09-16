@@ -1,0 +1,192 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import Faq from "../components/Faq.astro";
+import CtaBand from "../components/CtaBand.astro";
+import {
+  faqCapacitaciones,
+  negocio,
+  origin,
+  site,
+  temarioCapacitaciones,
+} from "../content/site";
+
+const title = "Capacitaciones Ejecutivas y Liderazgo en Zona Norte y CABA | Martín Dicovsky";
+const description =
+  "Capacitaciones presenciales in-company para empresas de Zona Norte y CABA: comunicación, feedback, resolución de conflictos y liderazgo.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  path="/capacitaciones"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        name: "Martín Dicovsky — Capacitaciones Ejecutivas y Liderazgo",
+        description,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: negocio.calle,
+          addressLocality: negocio.localidad,
+          addressRegion: negocio.provincia,
+          postalCode: negocio.codigoPostal,
+          addressCountry: "AR",
+        },
+        telephone: negocio.telefonoTel,
+        hasMap: negocio.mapsUrl,
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "08:00",
+            closes: "19:00",
+          },
+        ],
+        areaServed: [
+          { "@type": "Place", name: "Zona Norte, Buenos Aires" },
+          { "@type": "Place", name: "Ciudad Autónoma de Buenos Aires" },
+        ],
+        founder: { "@type": "Person", name: "Martín Dicovsky" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqCapacitaciones.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: `${origin}/` },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Capacitaciones",
+            item: `${origin}/capacitaciones`,
+          },
+        ],
+      },
+    ],
+  }}
+>
+  <Breadcrumbs items={[{ label: "Capacitaciones" }]} />
+  <PageHero
+    eyebrow="Presencial · Zona Norte y CABA"
+    title="Capacitaciones Ejecutivas y Liderazgo"
+    intro="Presencial para empresas en Zona Norte y CABA (Argentina)."
+  >
+    <a class="btn btn--primary btn--cta" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+      Consultar para mi empresa
+    </a>
+  </PageHero>
+
+  <Section tone="card">
+    <div class="max-w-3xl">
+      <p class="text-base muted" style="line-height: 1.625">
+        Las empresas no necesitan más charlas motivacionales vacías; necesitan líderes con
+        herramientas concretas para comunicar, dar feedback y resolver conflictos de frente.
+        Llevo mi método al mundo corporativo a través de mi curso de liderazgo y capacitaciones
+        100% a medida. No te hablo solo desde la teoría: resuelvo problemas reales basándome en
+        mi propia experiencia gestionando equipos como ex Gerente de Administración en el sector
+        tecnológico.
+      </p>
+      <p class="text-sm muted mt-6">
+        ¿Buscás trabajo individual? Eso es el{" "}
+        <a class="link-accent" href="/coach-para-empaticos">
+          Método S.I.A., el programa 1:1 de 90 días
+        </a>
+        , 100% online.
+      </p>
+    </div>
+  </Section>
+
+  <Section>
+    <p class="eyebrow">Curso de Liderazgo y Capacitaciones a Medida</p>
+    <div class="grid grid-gap-10 split-2">
+      <div>
+        <h2 class="h2">¿Para quién está pensado?</h2>
+        <p class="text-base muted mt-4">
+          No está destinado a empresas que sólo buscan “cumplir” con una charla de People/RRHH.
+          Esto es para equipos que realmente quieren mejorar cómo trabajan.
+        </p>
+        <ul class="prose-warm mt-4">
+          <li>
+            <strong>Empresas y Pymes (Zona Norte y CABA):</strong> que necesiten mejorar el
+            clima laboral, cortar con el “teléfono descompuesto” y optimizar la comunicación
+            interna.
+          </li>
+          <li>
+            <strong>Mandos medios y líderes:</strong> que tengan conversaciones difíciles
+            pendientes, les cueste poner límites a sus equipos o no sepan cómo dar indicaciones
+            claras.
+          </li>
+          <li>
+            <strong>Instituciones y organizaciones:</strong> que busquen alinear expectativas y
+            construir confianza como base del trabajo diario.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="h2">Modalidad de trabajo: práctica y al hueso</h2>
+        <p class="text-base muted mt-4">
+          No hay monólogos teóricos de tres horas. Si no se practica, no sirve.
+        </p>
+        <ul class="prose-warm mt-4">
+          <li>
+            <strong>Formato 100% presencial e interactivo:</strong> dinámicas participativas,
+            resolución de casos reales y puesta en común.
+          </li>
+          <li>
+            <strong>Dónde:</strong> formato in-company (vamos a tus oficinas).
+          </li>
+          <li>
+            <strong>A la medida de tu equipo:</strong> la duración, cantidad de encuentros,
+            tamaño del grupo y la inversión se definen luego de un diagnóstico inicial donde me
+            contás exactamente qué problema necesitan resolver.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section tone="muted">
+    <p class="eyebrow">Temario</p>
+    <h2 class="h2">¿Qué trabajamos en el Curso de Liderazgo?</h2>
+    <div class="grid grid-sm-2 mt-8">
+      {
+        temarioCapacitaciones.map((x) => (
+          <article class="card">
+            <h3 class="h3">{x.t}</h3>
+            <p class="text-sm muted mt-2" style="line-height: 1.625">{x.d}</p>
+          </article>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section>
+    <div class="max-w-2xl">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 class="h2">Sobre las capacitaciones</h2>
+      <div class="mt-6">
+        <Faq items={faqCapacitaciones} />
+      </div>
+    </div>
+  </Section>
+
+  <CtaBand
+    title="¿Necesitás herramientas para tu equipo?"
+    text="Contame el contexto de tu organización y armamos un encuentro a medida."
+  >
+    <a class="btn btn--on-secondary" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+      Consultar por una capacitación
+    </a>
+  </CtaBand>
+</Layout>
