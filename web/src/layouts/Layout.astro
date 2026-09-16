@@ -2,7 +2,9 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Analytics from "../components/Analytics/Analytics.astro";
 import { origin } from "../content/site";
+import { GA_TRACKING_ID } from "../config/analytics";
 
 interface Props {
   title: string;
@@ -25,6 +27,7 @@ const {
 const canonical = path === "/" ? `${origin}/` : `${origin}${path}`;
 const ogImage = `${origin}/og-martin-dicovsky.png`;
 const ogAlt = "Martín Dicovsky — Coach para personas empáticas";
+const analyticsEnabled = Boolean(GA_TRACKING_ID && GA_TRACKING_ID !== "G-XXXXXXXXXX");
 ---
 
 <!doctype html>
@@ -32,6 +35,15 @@ const ogAlt = "Martín Dicovsky — Coach para personas empáticas";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {
+      analyticsEnabled && (
+        <>
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+          <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+        </>
+      )
+    }
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Martín Dicovsky" />
@@ -77,5 +89,6 @@ const ogAlt = "Martín Dicovsky — Coach para personas empáticas";
       </main>
       <Footer />
     </div>
+    {analyticsEnabled && <Analytics />}
   </body>
 </html>
