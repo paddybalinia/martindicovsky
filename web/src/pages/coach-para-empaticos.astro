@@ -15,6 +15,7 @@ import {
   site,
   testimonios,
 } from "../content/site";
+import { faqSchemas, getCoachingServiceJsonLd } from "../lib/jsonld";
 
 const title =
   "Coach para Empáticos | Programa de Autoestima y Relaciones Sanas — Martín Dicovsky";
@@ -26,46 +27,10 @@ const description =
   title={title}
   description={description}
   path="/coach-para-empaticos"
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        name: "Método S.I.A. — Programa de coaching 1:1 para personas empáticas (90 días)",
-        serviceType: "Coaching de autoestima y relaciones",
-        description,
-        provider: { "@type": "Person", name: "Martín Dicovsky" },
-        areaServed: [
-          { "@type": "Country", name: "Argentina" },
-          { "@type": "Place", name: "Latinoamérica" },
-        ],
-        availableChannel: {
-          "@type": "ServiceChannel",
-          serviceLocation: { "@type": "VirtualLocation", name: "Videollamada online" },
-        },
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: faqPrograma.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: `${origin}/` },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Coaching para empáticos",
-            item: `${origin}/coach-para-empaticos`,
-          },
-        ],
-      },
-    ],
-  }}
+  jsonLd={[
+    getCoachingServiceJsonLd(description),
+    faqSchemas.programa(`${origin}/coach-para-empaticos`),
+  ]}
 >
   <Breadcrumbs items={[{ label: "Coaching para empáticos" }]} />
   <PageHero

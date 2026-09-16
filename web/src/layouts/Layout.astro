@@ -3,8 +3,15 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics/Analytics.astro";
-import { origin } from "../content/site";
+import { negocio, origin } from "../content/site";
 import { GA_TRACKING_ID } from "../config/analytics";
+import {
+  buildBreadcrumbListFromPath,
+  getLocalBusinessJsonLd,
+  getPersonJsonLd,
+  schemaIsBreadcrumbList,
+  type Schema,
+} from "../lib/jsonld";
 
 interface Props {
   title: string;
@@ -12,7 +19,7 @@ interface Props {
   path: string;
   ogType?: string;
   noIndex?: boolean;
-  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  jsonLd?: Schema | Schema[];
 }
 
 const {
@@ -28,6 +35,18 @@ const canonical = path === "/" ? `${origin}/` : `${origin}${path}`;
 const ogImage = `${origin}/og-martin-dicovsky.png`;
 const ogAlt = "Martín Dicovsky — Coach para personas empáticas";
 const analyticsEnabled = Boolean(GA_TRACKING_ID && GA_TRACKING_ID !== "G-XXXXXXXXXX");
+
+const extraJsonLd: Schema[] = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+const alreadyHasBreadcrumbs = extraJsonLd.some(schemaIsBreadcrumbList);
+const autoBreadcrumbs = buildBreadcrumbListFromPath(path);
+if (!alreadyHasBreadcrumbs && autoBreadcrumbs) {
+  extraJsonLd.push(autoBreadcrumbs);
+}
+
+const globalSchemas: Schema[] = noIndex
+  ? []
+  : [getPersonJsonLd(), getLocalBusinessJsonLd(), ...extraJsonLd];
 ---
 
 <!doctype html>
@@ -75,10 +94,14 @@ const analyticsEnabled = Boolean(GA_TRACKING_ID && GA_TRACKING_ID !== "G-XXXXXXX
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogAlt} />
     <link rel="image_src" href={ogImage} />
+    <meta name="geo.region" content={negocio.geo.region} />
+    <meta name="geo.placename" content={negocio.geo.placename} />
+    <meta name="geo.position" content={`${negocio.geo.latitude};${negocio.geo.longitude}`} />
+    <meta name="ICBM" content={`${negocio.geo.latitude}, ${negocio.geo.longitude}`} />
     {
-      jsonLd && (
-        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-      )
+      globalSchemas.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
     }
   </head>
   <body>

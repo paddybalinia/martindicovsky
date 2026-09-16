@@ -5,7 +5,8 @@ import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
 import Faq from "../components/Faq.astro";
 import CtaBand from "../components/CtaBand.astro";
-import { faqGeneral } from "../content/site";
+import { faqGeneral, origin } from "../content/site";
+import { faqSchemas } from "../lib/jsonld";
 
 const title = "Preguntas frecuentes sobre el coaching | Martín Dicovsky";
 const description =
@@ -16,15 +17,7 @@ const description =
   title={title}
   description={description}
   path="/preguntas-frecuentes"
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqGeneral.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  }}
+  jsonLd={faqSchemas.general(`${origin}/preguntas-frecuentes`)}
 >
   <Breadcrumbs items={[{ label: "Preguntas frecuentes" }]} />
   <PageHero

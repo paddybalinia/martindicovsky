@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
-import { site } from "../content/site";
+import { origin, site } from "../content/site";
 
 const title = "Contacto — Martín Dicovsky, coach para personas empáticas";
 const description =
@@ -17,7 +17,18 @@ const redes = [
 ] as const;
 ---
 
-<Layout title={title} description={description} path="/contacto">
+<Layout
+  title={title}
+  description={description}
+  path="/contacto"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contacto",
+    url: `${origin}/contacto`,
+    description,
+  }}
+>
   <Breadcrumbs items={[{ label: "Contacto" }]} />
   <PageHero
     eyebrow="Contacto"

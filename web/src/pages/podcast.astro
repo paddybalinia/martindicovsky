@@ -5,13 +5,14 @@ import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
 import CtaBand from "../components/CtaBand.astro";
 import { site } from "../content/site";
+import { getPodcastJsonLd } from "../lib/jsonld";
 
 const title = "Podcast de desarrollo personal para empáticos | Martín Dicovsky";
 const description =
   "Conversaciones sobre autoestima, límites y relaciones sanas. Escuchá el podcast de Martín Dicovsky en Spotify.";
 ---
 
-<Layout title={title} description={description} path="/podcast">
+<Layout title={title} description={description} path="/podcast" jsonLd={getPodcastJsonLd()}>
   <Breadcrumbs items={[{ label: "Podcast" }]} />
   <PageHero
     eyebrow="Podcast"

@@ -11,25 +11,7 @@ const description =
   "Mi historia: en 2019 corté una relación tóxica, renuncié a mi trabajo y me mudé a Suecia. Hoy acompaño a personas empáticas con el Método S.I.A.";
 ---
 
-<Layout
-  title={title}
-  description={description}
-  path="/sobre-mi"
-  ogType="profile"
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Martín Dicovsky",
-    jobTitle: "Coach y speaker",
-    description,
-    knowsAbout: ["autoestima", "relaciones sanas", "coaching", "liderazgo"],
-    areaServed: [
-      { "@type": "Country", name: "Argentina" },
-      { "@type": "Place", name: "Latinoamérica" },
-      { "@type": "Place", name: "Europa" },
-    ],
-  }}
->
+<Layout title={title} description={description} path="/sobre-mi" ogType="profile">
   <Breadcrumbs items={[{ label: "Sobre mí" }]} />
   <PageHero
     eyebrow="Sobre mí"

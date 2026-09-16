@@ -28,6 +28,12 @@ export const negocio = {
   telefonoTel: "+541122528446",
   mapsUrl:
     "https://www.google.com/maps/place/Coach+Martin+Dicovsky/@-34.4292272,-58.7964666,17z/data=!3m1!4b1!4m6!3m5!1s0x8632f61b742dfb6b:0x5c28de952b9345bd!8m2!3d-34.4292272!4d-58.7938917!16s%2Fg%2F11zyp4t95s?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D",
+  geo: {
+    region: "AR-B",
+    placename: "Pilar, Buenos Aires",
+    latitude: -34.4292272,
+    longitude: -58.7938917,
+  },
   horarios: [
     { dia: "Lunes", horario: "8:00 a.m. – 7:00 p.m." },
     { dia: "Martes", horario: "8:00 a.m. – 7:00 p.m." },

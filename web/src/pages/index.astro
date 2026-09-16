@@ -13,6 +13,7 @@ import {
   site,
   testimonios,
 } from "../content/site";
+import { faqSchemas } from "../lib/jsonld";
 
 const title = "Coach para Empáticos | Autoestima y Relaciones Sanas — Martín Dicovsky";
 const description =
@@ -23,19 +24,7 @@ const description =
   title={title}
   description={description}
   path="/"
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Martín Dicovsky",
-    jobTitle: "Coach y speaker",
-    description: site.claim,
-    areaServed: [
-      { "@type": "Country", name: "Argentina" },
-      { "@type": "Place", name: "Latinoamérica" },
-      { "@type": "Place", name: "Europa" },
-    ],
-    url: `${origin}/`,
-  }}
+  jsonLd={[faqSchemas.programa(`${origin}/`)]}
 >
   <section class="hero-home">
     <div class="container-page hero-home__grid">

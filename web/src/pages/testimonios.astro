@@ -5,14 +5,26 @@ import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
 import TestimonialCard from "../components/TestimonialCard.astro";
 import CtaBand from "../components/CtaBand.astro";
-import { testimonios } from "../content/site";
+import { origin, testimonios } from "../content/site";
 
 const title = "Testimonios de clientes del programa de 90 días | Martín Dicovsky";
 const description =
   "Resultados reales de clientes reales: qué cambió en las personas que hicieron el Método S.I.A. con Martín Dicovsky.";
 ---
 
-<Layout title={title} description={description} path="/testimonios">
+<Layout
+  title={title}
+  description={description}
+  path="/testimonios"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Testimonios",
+    url: `${origin}/testimonios`,
+    description,
+    about: { "@id": `${origin}/#localbusiness` },
+  }}
+>
   <Breadcrumbs items={[{ label: "Testimonios" }]} />
   <PageHero
     eyebrow="Opiniones"

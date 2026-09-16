@@ -7,11 +7,11 @@ import Faq from "../components/Faq.astro";
 import CtaBand from "../components/CtaBand.astro";
 import {
   faqCapacitaciones,
-  negocio,
   origin,
   site,
   temarioCapacitaciones,
 } from "../content/site";
+import { faqSchemas, getCapacitacionesServiceJsonLd } from "../lib/jsonld";
 
 const title = "Capacitaciones Ejecutivas y Liderazgo en Zona Norte y CABA | Martín Dicovsky";
 const description =
@@ -22,59 +22,10 @@ const description =
   title={title}
   description={description}
   path="/capacitaciones"
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfessionalService",
-        name: "Martín Dicovsky — Capacitaciones Ejecutivas y Liderazgo",
-        description,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: negocio.calle,
-          addressLocality: negocio.localidad,
-          addressRegion: negocio.provincia,
-          postalCode: negocio.codigoPostal,
-          addressCountry: "AR",
-        },
-        telephone: negocio.telefonoTel,
-        hasMap: negocio.mapsUrl,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "19:00",
-          },
-        ],
-        areaServed: [
-          { "@type": "Place", name: "Zona Norte, Buenos Aires" },
-          { "@type": "Place", name: "Ciudad Autónoma de Buenos Aires" },
-        ],
-        founder: { "@type": "Person", name: "Martín Dicovsky" },
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: faqCapacitaciones.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: `${origin}/` },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Capacitaciones",
-            item: `${origin}/capacitaciones`,
-          },
-        ],
-      },
-    ],
-  }}
+  jsonLd={[
+    getCapacitacionesServiceJsonLd(description),
+    faqSchemas.capacitaciones(`${origin}/capacitaciones`),
+  ]}
 >
   <Breadcrumbs items={[{ label: "Capacitaciones" }]} />
   <PageHero

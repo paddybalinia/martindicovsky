@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
-import { beneficiosClase, origin, site } from "../content/site";
+import { beneficiosClase, site } from "../content/site";
+import { getClaseJsonLd } from "../lib/jsonld";
 
 const title = "Clase gratuita para empáticos: autoestima y límites | Martín Dicovsky";
 const description =
@@ -14,14 +15,7 @@ const description =
   title={title}
   description={description}
   path="/clase-gratuita"
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: `${origin}/` },
-      { "@type": "ListItem", position: 2, name: "Clase gratuita", item: `${origin}/clase-gratuita` },
-    ],
-  }}
+  jsonLd={getClaseJsonLd(description)}
 >
   <Breadcrumbs items={[{ label: "Clase gratuita" }]} />
   <PageHero
