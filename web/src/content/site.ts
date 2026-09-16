@@ -1,5 +1,18 @@
 export const origin = "https://www.martindicovsky.com.ar";
 
+const whatsappPhone = "5491122528446";
+
+export const whatsappMessages = {
+  general:
+    "Hola Martín, te escribo desde martindicovsky.com.ar. Quiero hacerte una consulta.",
+  capacitaciones:
+    "Hola Martín, te escribo desde la web. Quiero consultar por una capacitación para mi empresa.",
+} as const;
+
+export function whatsappUrl(message: string = whatsappMessages.general) {
+  return `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
+}
+
 export const site = {
   name: "Martín Dicovsky",
   role: "Coach para personas empáticas",
@@ -12,7 +25,8 @@ export const site = {
   instagram: "https://www.instagram.com/coachmartin.ok/",
   tiktok: "https://www.tiktok.com/@coachmartin.ok",
   linkedin: "https://www.linkedin.com/in/martindicovsky",
-  whatsapp: "https://wa.me/5491122528446",
+  whatsapp: whatsappUrl(),
+  whatsappCapacitaciones: whatsappUrl(whatsappMessages.capacitaciones),
   whatsappLabel: "+54 9 11 2252-8446",
   email: "coach@martindicovsky.com.ar",
 };
