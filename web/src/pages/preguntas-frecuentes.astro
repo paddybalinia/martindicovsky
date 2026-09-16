@@ -5,7 +5,7 @@ import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
 import Faq from "../components/Faq.astro";
 import CtaBand from "../components/CtaBand.astro";
-import { faqGeneral, origin } from "../content/site";
+import { faqGeneral, linkTitles, origin } from "../content/site";
 import { faqSchemas } from "../lib/jsonld";
 
 const title = "Preguntas frecuentes del coaching | Martín Dicovsky";
@@ -30,7 +30,7 @@ const description =
       <Faq items={faqGeneral} />
       <p class="text-sm muted mt-8">
         ¿Tenés otra pregunta?{" "}
-        <a class="link-accent" href="/contacto">Escribime desde contacto</a>.
+        <a class="link-accent" href="/contacto" title={linkTitles.contacto}>Escribime desde contacto</a>.
       </p>
     </div>
   </Section>

@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.martindicovsky.com.ar/sitemap.xml
+Sitemap: https://www.martindicovsky.com.ar/sitemap-index.xml

@@ -1,18 +1,19 @@
 ---
-import { nav, site } from "../content/site";
+import { linkTitles, nav, site } from "../content/site";
 
 const current = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
 
 <header class="site-header" data-header>
   <div class="container-page site-header__bar">
-    <a href="/" class="site-logo">Martín Dicovsky</a>
+    <a href="/" class="site-logo" title={linkTitles.home}>Martín Dicovsky</a>
 
     <nav aria-label="Navegación principal" class="site-nav">
       {
         nav.map((item) => (
           <a
             href={item.to}
+            title={item.title}
             class={current === item.to ? "is-active" : undefined}
             aria-current={current === item.to ? "page" : undefined}
           >
@@ -26,6 +27,7 @@ const current = Astro.url.pathname.replace(/\/$/, "") || "/";
       <a
         class="btn btn--primary btn--sm"
         href={site.calendly}
+        title={linkTitles.calendly}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -56,12 +58,13 @@ const current = Astro.url.pathname.replace(/\/$/, "") || "/";
     <nav aria-label="Navegación móvil" class="container-page">
       {
         nav.map((item) => (
-          <a href={item.to}>{item.label}</a>
+          <a href={item.to} title={item.title}>{item.label}</a>
         ))
       }
       <a
         class="btn btn--primary"
         href={site.calendly}
+        title={linkTitles.calendly}
         target="_blank"
         rel="noopener noreferrer"
       >

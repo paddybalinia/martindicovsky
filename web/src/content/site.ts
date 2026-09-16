@@ -45,14 +45,35 @@ export const negocio = {
   ],
 };
 
+export const linkTitles = {
+  home: "Inicio — Martín Dicovsky",
+  coaching: "Método S.I.A.: coaching 1:1 de 90 días",
+  capacitaciones: "Capacitaciones ejecutivas en Zona Norte y CABA",
+  claseGratuita: "Clase gratuita para empáticos",
+  sobreMi: "Sobre Martín Dicovsky",
+  testimonios: "Testimonios de clientes del Método S.I.A.",
+  podcast: "Podcast Protagonistas en Spotify",
+  contacto: "Contacto con Martín Dicovsky",
+  faq: "Preguntas frecuentes del coaching",
+  calendly: "Agendar videollamada de admisión con Martín Dicovsky",
+  whatsapp: "Escribir a Martín Dicovsky por WhatsApp",
+  email: "Enviar email a Martín Dicovsky",
+  maps: "Ver la ubicación de Martín Dicovsky en Google Maps",
+  instagram: "Instagram de Martín Dicovsky",
+  tiktok: "TikTok de Martín Dicovsky",
+  linkedin: "LinkedIn de Martín Dicovsky",
+  spotify: "Escuchar Protagonistas Podcast en Spotify",
+  designer: "Sitio web de Patricio Baliña",
+} as const;
+
 export const nav = [
-  { to: "/coach-para-empaticos", label: "Método S.I.A." },
-  { to: "/capacitaciones", label: "Capacitaciones" },
-  { to: "/clase-gratuita", label: "Clase gratuita" },
-  { to: "/sobre-mi", label: "Sobre mí" },
-  { to: "/testimonios", label: "Testimonios" },
-  { to: "/podcast", label: "Podcast" },
-  { to: "/contacto", label: "Contacto" },
+  { to: "/coach-para-empaticos", label: "Método S.I.A.", title: linkTitles.coaching },
+  { to: "/capacitaciones", label: "Capacitaciones", title: linkTitles.capacitaciones },
+  { to: "/clase-gratuita", label: "Clase gratuita", title: linkTitles.claseGratuita },
+  { to: "/sobre-mi", label: "Sobre mí", title: linkTitles.sobreMi },
+  { to: "/testimonios", label: "Testimonios", title: linkTitles.testimonios },
+  { to: "/podcast", label: "Podcast", title: linkTitles.podcast },
+  { to: "/contacto", label: "Contacto", title: linkTitles.contacto },
 ] as const;
 
 export const pasos = [

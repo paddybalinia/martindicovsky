@@ -7,6 +7,7 @@ import Faq from "../components/Faq.astro";
 import CtaBand from "../components/CtaBand.astro";
 import {
   faqCapacitaciones,
+  linkTitles,
   origin,
   site,
   temarioCapacitaciones,
@@ -33,7 +34,7 @@ const description =
     title="Capacitaciones Ejecutivas y Liderazgo"
     intro="Presencial para empresas en Zona Norte y CABA (Argentina)."
   >
-    <a class="btn btn--primary btn--cta" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+    <a class="btn btn--primary btn--cta" href={site.whatsapp} title={linkTitles.whatsapp} target="_blank" rel="noopener noreferrer">
       Consultar para mi empresa
     </a>
   </PageHero>
@@ -50,7 +51,7 @@ const description =
       </p>
       <p class="text-sm muted mt-6">
         ¿Buscás trabajo individual? Eso es el{" "}
-        <a class="link-accent" href="/coach-para-empaticos">
+        <a class="link-accent" href="/coach-para-empaticos" title={linkTitles.coaching}>
           Método S.I.A., el programa 1:1 de 90 días
         </a>
         , 100% online.
@@ -136,7 +137,7 @@ const description =
     title="¿Necesitás herramientas para tu equipo?"
     text="Contame el contexto de tu organización y armamos un encuentro a medida."
   >
-    <a class="btn btn--on-secondary" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+    <a class="btn btn--on-secondary" href={site.whatsapp} title={linkTitles.whatsapp} target="_blank" rel="noopener noreferrer">
       Consultar por una capacitación
     </a>
   </CtaBand>

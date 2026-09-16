@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
-import { beneficiosClase, site } from "../content/site";
+import { beneficiosClase, linkTitles, site } from "../content/site";
 import { getClaseJsonLd } from "../lib/jsonld";
 
 const title = "Clase gratuita: autoestima y límites | Martín Dicovsky";
@@ -23,7 +23,7 @@ const description =
     title="Clase gratuita para empáticos: dejá de complacer y empezá a priorizarte"
     intro="Una clase corta y directa para entender el patrón que te lleva a priorizar a todos antes que a vos, y cómo cambiarlo a partir de hoy mismo."
   >
-    <a class="btn btn--outline btn--cta" href={site.claseGratuita} target="_blank" rel="noopener noreferrer">
+    <a class="btn btn--outline btn--cta" href={site.claseGratuita} title={linkTitles.claseGratuita} target="_blank" rel="noopener noreferrer">
       Quiero ver la clase gratuita
     </a>
   </PageHero>
@@ -61,7 +61,7 @@ const description =
           </li>
         </ul>
         <div class="mt-6">
-          <a class="btn btn--primary btn--cta" href={site.claseGratuita} target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--primary btn--cta" href={site.claseGratuita} title={linkTitles.claseGratuita} target="_blank" rel="noopener noreferrer">
             Quiero ver la clase gratuita
           </a>
         </div>
@@ -82,7 +82,7 @@ const description =
         siguiente es el programa 1:1 de 90 días.
       </p>
       <div class="mt-6">
-        <a class="btn btn--primary btn--cta" href={site.calendly} target="_blank" rel="noopener noreferrer">
+        <a class="btn btn--primary btn--cta" href={site.calendly} title={linkTitles.calendly} target="_blank" rel="noopener noreferrer">
           Agendar mi videollamada con Martín
         </a>
       </div>

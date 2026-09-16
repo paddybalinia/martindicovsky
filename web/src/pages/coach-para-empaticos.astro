@@ -8,6 +8,7 @@ import Faq from "../components/Faq.astro";
 import CtaBand from "../components/CtaBand.astro";
 import {
   faqPrograma,
+  linkTitles,
   noEsPara,
   origin,
   paraQuien,
@@ -38,10 +39,10 @@ const description =
     intro="Si sos de los que siempre está para los demás y nunca para vos, el problema no es tu sensibilidad. Es lo que aprendiste a hacer con ella."
   >
     <div class="stack-3">
-      <a class="btn btn--primary btn--cta" href={site.calendly} target="_blank" rel="noopener noreferrer">
+      <a class="btn btn--primary btn--cta" href={site.calendly} title={linkTitles.calendly} target="_blank" rel="noopener noreferrer">
         Quiero agendar mi llamada de admisión
       </a>
-      <a class="btn btn--outline btn--cta-tight" href={site.claseGratuita} target="_blank" rel="noopener noreferrer">
+      <a class="btn btn--outline btn--cta-tight" href={site.claseGratuita} title={linkTitles.claseGratuita} target="_blank" rel="noopener noreferrer">
         Ver Clase Para Empáticos
       </a>
     </div>
@@ -141,7 +142,7 @@ const description =
           <p>
             Por eso el programa es concreto y accionable: 90 días, foco en tu vida concreta, y una
             práctica por semana que te devuelva evidencia de que podés.{" "}
-            <a href="/sobre-mi">Conocé mi historia completa</a>.
+            <a href="/sobre-mi" title={linkTitles.sobreMi}>Conocé mi historia completa</a>.
           </p>
         </div>
         <span class="badge">Programa de 90 días</span>
@@ -160,7 +161,7 @@ const description =
       }
     </div>
     <p class="text-sm mt-6">
-      <a class="link-accent" href="/testimonios">Ver todos los testimonios</a>
+      <a class="link-accent" href="/testimonios" title={linkTitles.testimonios}>Ver todos los testimonios</a>
     </p>
   </Section>
 
@@ -173,7 +174,7 @@ const description =
       </div>
       <p class="text-sm muted mt-6">
         ¿Buscás la oferta presencial para equipos u organizaciones? Eso es otra cosa:{" "}
-        <a class="link-accent" href="/capacitaciones">
+        <a class="link-accent" href="/capacitaciones" title={linkTitles.capacitaciones}>
           capacitaciones ejecutivas presenciales en Zona Norte y CABA
         </a>
         . El coaching 1:1 de esta página es 100% online.

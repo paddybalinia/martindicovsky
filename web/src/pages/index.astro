@@ -7,6 +7,7 @@ import Faq from "../components/Faq.astro";
 import CtaBand from "../components/CtaBand.astro";
 import {
   faqPrograma,
+  linkTitles,
   origin,
   paraQuien,
   pasos,
@@ -39,15 +40,15 @@ const description =
           realmente te valoren.
         </p>
         <div class="hero-actions">
-          <a class="btn btn--primary btn--cta" href={site.calendly} target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--primary btn--cta" href={site.calendly} title={linkTitles.calendly} target="_blank" rel="noopener noreferrer">
             Quiero agendar mi llamada de admisión
           </a>
         </div>
         <div class="hero-links">
-          <a class="btn btn--link btn--cta-tight" href={site.claseGratuita} target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--link btn--cta-tight" href={site.claseGratuita} title={linkTitles.claseGratuita} target="_blank" rel="noopener noreferrer">
             Ver Clase Para Empáticos
           </a>
-          <a class="btn btn--link btn--cta" href={site.spotify} target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--link btn--cta" href={site.spotify} title={linkTitles.spotify} target="_blank" rel="noopener noreferrer">
             Escuchar el podcast
           </a>
         </div>
@@ -55,6 +56,7 @@ const description =
       <Photo
         src="/images/soy-martin-dicovsky.webp"
         alt="Martín Dicovsky, coach para personas empáticas"
+        title="Martín Dicovsky, coach para personas empáticas"
         width={896}
         height={896}
         priority
@@ -95,7 +97,7 @@ const description =
       }
     </div>
     <p class="text-sm mt-8">
-      <a class="link-accent" href="/coach-para-empaticos">Conocé el programa completo de 90 días</a>
+      <a class="link-accent" href="/coach-para-empaticos" title={linkTitles.coaching}>Conocé el programa completo de 90 días</a>
     </p>
   </Section>
 
@@ -110,7 +112,7 @@ const description =
       }
     </div>
     <p class="text-sm mt-8">
-      <a class="link-accent" href="/testimonios">Ver más testimonios</a>
+      <a class="link-accent" href="/testimonios" title={linkTitles.testimonios}>Ver más testimonios</a>
     </p>
   </Section>
 
@@ -118,7 +120,8 @@ const description =
     <div class="split-about">
       <Photo
         src="/images/martin-dicovsky-coach.webp"
-        alt="Martín Dicovsky, coach y capacitador"
+        alt="Martín Dicovsky, coach y capacitador ejecutivo"
+        title="Martín Dicovsky, coach y capacitador ejecutivo"
         width={892}
         height={1192}
       />
@@ -138,7 +141,7 @@ const description =
           </p>
         </div>
         <p class="text-sm mt-4">
-          <a class="link-accent" href="/sobre-mi">Conocer mi historia completa</a>
+          <a class="link-accent" href="/sobre-mi" title={linkTitles.sobreMi}>Conocer mi historia completa</a>
         </p>
       </div>
     </div>
@@ -150,7 +153,7 @@ const description =
         <p class="eyebrow">Preguntas frecuentes</p>
         <h2 class="h2">Lo que necesitás saber antes de empezar</h2>
         <p class="text-sm mt-4">
-          <a class="link-accent" href="/preguntas-frecuentes">Ver todas las preguntas frecuentes</a>
+          <a class="link-accent" href="/preguntas-frecuentes" title={linkTitles.faq}>Ver todas las preguntas frecuentes</a>
         </p>
       </div>
       <Faq items={faqPrograma} />
@@ -166,7 +169,7 @@ const description =
           construir relaciones sanas.
         </p>
         <div class="mt-5">
-          <a class="btn btn--primary btn--md" href={site.calendly} target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--primary btn--md" href={site.calendly} title={linkTitles.calendly} target="_blank" rel="noopener noreferrer">
             Agendar videollamada para analizar mi caso
           </a>
         </div>
@@ -177,10 +180,10 @@ const description =
           Para empresas, equipos e instituciones en Zona Norte y CABA (Argentina).
         </p>
         <div class="stack-4 mt-5">
-          <a class="btn btn--outline btn--md" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--outline btn--md" href={site.whatsapp} title={linkTitles.whatsapp} target="_blank" rel="noopener noreferrer">
             Pedir presupuesto
           </a>
-          <a class="link-accent text-sm" href="/capacitaciones">Ver capacitaciones</a>
+          <a class="link-accent text-sm" href="/capacitaciones" title={linkTitles.capacitaciones}>Ver capacitaciones</a>
         </div>
       </article>
     </div>

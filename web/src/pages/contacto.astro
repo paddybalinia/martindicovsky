@@ -3,17 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
-import { origin, site } from "../content/site";
+import { linkTitles, origin, site } from "../content/site";
 
 const title = "Contacto | Coach Martín Dicovsky en Pilar, Buenos Aires";
 const description =
   "Escribile a Martín Dicovsky por WhatsApp o email. Coaching 1:1 online (Método S.I.A., 90 días) y capacitaciones presenciales en Pilar, Zona Norte y CABA.";
 
 const redes = [
-  ["Instagram", site.instagram],
-  ["TikTok", site.tiktok],
-  ["LinkedIn", site.linkedin],
-  ["Spotify (Protagonistas Podcast)", site.spotify],
+  ["Instagram", site.instagram, linkTitles.instagram],
+  ["TikTok", site.tiktok, linkTitles.tiktok],
+  ["LinkedIn", site.linkedin, linkTitles.linkedin],
+  ["Spotify (Protagonistas Podcast)", site.spotify, linkTitles.spotify],
 ] as const;
 ---
 
@@ -47,13 +47,13 @@ const redes = [
                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </svg>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={`mailto:${site.email}`} title={linkTitles.email}>{site.email}</a>
             </li>
             <li class="contact-row">
               <svg class="icon icon--secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
               </svg>
-              <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+              <a href={site.whatsapp} title={linkTitles.whatsapp} target="_blank" rel="noopener noreferrer">
                 WhatsApp: {site.whatsappLabel}
               </a>
             </li>
@@ -64,9 +64,9 @@ const redes = [
           <p class="eyebrow">Redes</p>
           <ul class="social-links">
             {
-              redes.map(([label, href]) => (
+              redes.map(([label, href, title]) => (
                 <li>
-                  <a href={href} target="_blank" rel="noopener noreferrer">
+                  <a href={href} title={title} target="_blank" rel="noopener noreferrer">
                     {label}
                   </a>
                 </li>
@@ -79,11 +79,11 @@ const redes = [
           <p class="eyebrow">Acceso directo</p>
           <p class="text-base">
             Si ya sabés que querés avanzar con el coaching 1:1, podés{" "}
-            <a class="link-accent" href={site.calendly} target="_blank" rel="noopener noreferrer">
+            <a class="link-accent" href={site.calendly} title={linkTitles.calendly} target="_blank" rel="noopener noreferrer">
               agendar la videollamada directamente desde el calendario
             </a>{" "}
             o revisar las{" "}
-            <a class="link-accent" href="/preguntas-frecuentes">Preguntas Frecuentes</a>.
+            <a class="link-accent" href="/preguntas-frecuentes" title={linkTitles.faq}>Preguntas Frecuentes</a>.
           </p>
         </div>
       </div>

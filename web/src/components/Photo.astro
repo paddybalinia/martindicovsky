@@ -2,18 +2,20 @@
 interface Props {
   src: string;
   alt: string;
+  title?: string;
   width: number;
   height: number;
   priority?: boolean;
 }
 
-const { src, alt, width, height, priority = false } = Astro.props;
+const { src, alt, title = alt, width, height, priority = false } = Astro.props;
 ---
 
 <div class="photo">
   <img
     src={src}
     alt={alt}
+    title={title}
     width={width}
     height={height}
     loading={priority ? "eager" : "lazy"}

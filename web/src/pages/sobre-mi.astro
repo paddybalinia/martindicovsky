@@ -5,6 +5,7 @@ import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
 import Photo from "../components/Photo.astro";
 import CtaBand from "../components/CtaBand.astro";
+import { linkTitles } from "../content/site";
 
 const title = "Quién es Martín Dicovsky, coach para empáticos";
 const description =
@@ -54,16 +55,17 @@ const description =
         </p>
         <p>
           Hoy trabajo de dos maneras:{" "}
-          <a href="/coach-para-empaticos">coaching 1:1 online con el Método S.I.A.</a>{" "}
+          <a href="/coach-para-empaticos" title={linkTitles.coaching}>coaching 1:1 online con el Método S.I.A.</a>{" "}
           y{" "}
-          <a href="/capacitaciones">capacitaciones ejecutivas presenciales</a>{" "}
+          <a href="/capacitaciones" title={linkTitles.capacitaciones}>capacitaciones ejecutivas presenciales</a>{" "}
           para empresas de Zona Norte y CABA.
         </p>
       </div>
       <div class="space-y-6">
         <Photo
           src="/images/soy-martin-dicovsky.webp"
-          alt="Martín Dicovsky, coach para personas empáticas"
+          alt="Retrato de Martín Dicovsky, coach para personas empáticas"
+          title="Martín Dicovsky, coach para personas empáticas"
           width={896}
           height={896}
         />
