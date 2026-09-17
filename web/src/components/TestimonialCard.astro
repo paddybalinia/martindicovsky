@@ -3,9 +3,10 @@ interface Props {
   name: string;
   quote: string;
   role?: string;
+  rating?: number;
 }
 
-const { name, quote, role } = Astro.props;
+const { name, quote, role, rating = 5 } = Astro.props;
 ---
 
 <figure class="quote-card">
@@ -15,7 +16,14 @@ const { name, quote, role } = Astro.props;
   </svg>
   <blockquote>{quote}</blockquote>
   <figcaption>
-    <span class="quote-card__name">{name}</span>
-    {role && <span class="muted"> · {role}</span>}
+    <div>
+      <span class="quote-card__name">{name}</span>
+      {role && <span class="muted"> · {role}</span>}
+    </div>
+    <div class="quote-card__stars" aria-label={`${rating} estrellas`}>
+      {Array.from({ length: rating }).map(() => (
+        <span>★</span>
+      ))}
+    </div>
   </figcaption>
 </figure>

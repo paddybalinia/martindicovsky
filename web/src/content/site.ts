@@ -190,7 +190,7 @@ export const testimonios = [
     quote:
       "El método SIA fortaleció mi amor propio, me enseñó a poner límites con respeto y a dejar de conformarme con lo que no me hace bien. Fue una transformación profunda: reconocí mi valor y empecé a tomar decisiones más conscientes. Un antes y un después en mi vida.",
   },
-];
+].map((item) => ({ ...item, rating: 5 as const }));
 
 export const faqPrograma = [
   {
