@@ -61,12 +61,30 @@ export function getOpeningHoursJsonLd() {
 }
 
 export function getReviewJsonLd() {
+  const reviewCount = testimonios.length;
+  const ratingValue = (
+    testimonios.reduce((sum, item) => sum + item.rating, 0) / reviewCount
+  ).toFixed(1);
+
   return {
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue,
+      reviewCount: String(reviewCount),
+      bestRating: "5",
+      worstRating: "1",
+    },
     review: testimonios.map((item) => ({
       "@type": "Review",
       author: {
         "@type": "Person",
         name: item.name,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: item.rating,
+        bestRating: 5,
+        worstRating: 1,
       },
       reviewBody: item.quote,
       itemReviewed: {

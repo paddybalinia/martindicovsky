@@ -744,6 +744,10 @@ address {
 }
 
 .quote-card figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   margin-top: 1.25rem;
   border-top: 1px solid var(--border);
   padding-top: 1rem;
@@ -753,6 +757,15 @@ address {
 .quote-card__name {
   font-weight: 700;
   color: var(--primary);
+}
+
+.quote-card__stars {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 0.15rem;
+  color: var(--secondary);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
 }
 
 .crumbs {
