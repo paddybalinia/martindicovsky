@@ -46,7 +46,14 @@ export function getGeoJsonLd() {
 }
 
 export function getSameAs() {
-  return [site.instagram, site.tiktok, site.linkedin, site.spotify, negocio.mapsUrl];
+  return [
+    site.instagram,
+    site.tiktok,
+    site.linkedin,
+    site.youtube,
+    site.spotify,
+    negocio.mapsUrl,
+  ];
 }
 
 export function getOpeningHoursJsonLd() {

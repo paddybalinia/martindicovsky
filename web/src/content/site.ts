@@ -25,6 +25,7 @@ export const site = {
   instagram: "https://www.instagram.com/coachmartin.ok/",
   tiktok: "https://www.tiktok.com/@coachmartin.ok",
   linkedin: "https://www.linkedin.com/in/martindicovsky",
+  youtube: "https://www.youtube.com/@coachmartinok",
   whatsapp: whatsappUrl(),
   whatsappCapacitaciones: whatsappUrl(whatsappMessages.capacitaciones),
   whatsappLabel: "+54 9 11 2252-8446",
