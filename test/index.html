@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Test de Autovaloración: ¿Estás buscando amor para sentirte suficiente?</title>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://test.martindicovsky.com.ar">
@@ -16,7 +16,7 @@
     <meta name="twitter:image" content="https://test.martindicovsky.com.ar/img/Open%20Graph.jpeg">
     <style>
         :root {
-            --bg-color: #F8FAFC;       /* Fondo claro / perla */
+            --bg-color: #000000;       /* Fondo negro */
             --container-bg: #0A0A0A;   /* Recuadro negro elegante */
             --text-main: #FFFFFF;      /* Texto blanco principal */
             --text-light: #D1D5DB;     /* Texto gris claro */
@@ -28,17 +28,30 @@
             --option-bg: #171717;      
             --option-hover: #262626;   
         }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding:
+                max(20px, env(safe-area-inset-top))
+                max(20px, env(safe-area-inset-right))
+                max(20px, env(safe-area-inset-bottom))
+                max(20px, env(safe-area-inset-left));
             display: flex;
             justify-content: center;
             align-items: center;
+            align-items: safe center;
             min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
         }
         .container {
             background-color: var(--container-bg);
@@ -49,7 +62,7 @@
             border: 1px solid var(--border-color);
             padding: 40px 30px;
             text-align: center;
-            box-sizing: border-box;
+            overflow-wrap: break-word;
         }
         h1 {
             color: var(--text-main);
@@ -76,9 +89,9 @@
             width: 100%;
             text-decoration: none;
             display: inline-block;
-            box-sizing: border-box;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            min-height: 48px;
         }
         .btn:hover {
             background-color: var(--btn-hover);
@@ -106,6 +119,8 @@
             transition: all 0.2s ease;
             font-size: 0.95rem;
             color: var(--text-light);
+            min-height: 48px;
+            -webkit-tap-highlight-color: transparent;
         }
         .option:hover {
             background-color: var(--option-hover);
@@ -140,6 +155,55 @@
             background-color: var(--accent);
             width: 0%;
             transition: width 0.3s ease;
+        }
+        @media (max-width: 520px), (max-height: 720px) {
+            body {
+                align-items: flex-start;
+                align-items: safe center;
+                padding:
+                    max(12px, env(safe-area-inset-top))
+                    max(12px, env(safe-area-inset-right))
+                    max(12px, env(safe-area-inset-bottom))
+                    max(12px, env(safe-area-inset-left));
+            }
+            .container {
+                padding: 28px 18px;
+                border-radius: 12px;
+            }
+            h1 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 0.92rem;
+                margin-bottom: 22px;
+            }
+            .question-title {
+                font-size: 1.05rem;
+                margin-bottom: 18px;
+            }
+            .option {
+                padding: 14px 12px;
+                font-size: 0.92rem;
+            }
+            .result-title {
+                font-size: 1.2rem;
+            }
+            .btn {
+                padding: 14px 16px;
+                font-size: 0.88rem;
+                letter-spacing: 0.3px;
+            }
+        }
+        @media (max-width: 360px) {
+            .container {
+                padding: 22px 14px;
+            }
+            h1 {
+                font-size: 1.15rem;
+            }
+            .btn {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
