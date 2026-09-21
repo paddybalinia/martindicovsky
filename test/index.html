@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Autovaloración: ¿Estás buscando amor para sentirte suficiente?</title>
+    <style>
+        :root {
+            --bg-color: #F8FAFC;       /* Fondo claro / perla */
+            --container-bg: #0A0A0A;   /* Recuadro negro elegante */
+            --text-main: #FFFFFF;      /* Texto blanco principal */
+            --text-light: #D1D5DB;     /* Texto gris claro */
+            --accent: #FFFFFF;         
+            --border-color: #262626;   /* Bordes sutiles */
+            --btn-bg: #1F1F1F;         
+            --btn-hover: #FFFFFF;      
+            --btn-text-hover: #000000; 
+            --option-bg: #171717;      
+            --option-hover: #262626;   
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: var(--container-bg);
+            max-width: 480px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: var(--text-main);
+            font-size: 1.45rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+        .btn {
+            background-color: var(--btn-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 16px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            box-sizing: border-box;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn:hover {
+            background-color: var(--btn-hover);
+            color: var(--btn-text-hover);
+            border-color: var(--accent);
+        }
+        .question-container {
+            display: none;
+            text-align: left;
+        }
+        .question-title {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            font-weight: 600;
+            margin-bottom: 22px;
+            line-height: 1.4;
+        }
+        .option {
+            background-color: var(--option-bg);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        .option:hover {
+            background-color: var(--option-hover);
+            border-color: var(--accent);
+            color: var(--text-main);
+        }
+        .result-container {
+            display: none;
+        }
+        .result-title {
+            color: var(--text-main);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .result-text {
+            text-align: left;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background-color: #262626;
+            border-radius: 2px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background-color: var(--accent);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="home">
+        <h1>¿Estás buscando valor afuera para sentirte suficiente?</h1>
+        <p>Descubrí en menos de 2 minutos qué patrón inconsciente está frenando tu confianza, tus límites y tu bienestar emocional.</p>
+        <button class="btn" onclick="startTest()">Comenzar Test Gratuito</button>
+    </div>
+
+    <div class="container question-container" id="quiz">
+        <div class="progress-bar"><div class="progress" id="progress"></div></div>
+        <div class="question-title" id="question"></div>
+        <div id="options"></div>
+    </div>
+
+    <div class="container result-container" id="result">
+        <div class="result-title" id="result-title"></div>
+        <div class="result-text" id="result-text"></div>
+        <a href="https://calendly.com/coach-martindicovsky/45" target="_blank" class="btn">Agendar mi Sesión de Diagnóstico</a>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                q: "1. ¿Cómo te sentís cuando la persona que te gusta, tu 'casi algo' o tu pareja tarda horas en responderte o se muestra distante?",
+                options: [
+                    { text: "Siento un nudo en la panza, ansiedad y pienso automáticamente que hice algo mal.", score: 3 },
+                    { text: "Me molesta un poco y me cuesta concentrarme totalmente en mis actividades.", score: 2 },
+                    { text: "Sigo con mi día. Si responde bien, y si no, no condiciona mi paz mental.", score: 0 }
+                ]
+            },
+            {
+                q: "2. Cuando algo en la relación o en la cita te incomoda o querés pedir más claridad o compromiso, ¿qué hacés?",
+                options: [
+                    { text: "Me callo y me adapto por miedo a que me tilden de 'intenso/a' o se alejen.", score: 3 },
+                    { text: "Lo digo, pero con mucha culpa o pidiendo disculpas por sentir lo que siento.", score: 2 },
+                    { text: "Lo expreso con claridad y calma. Mis necesidades valen lo mismo que las del otro.", score: 0 }
+                ]
+            },
+            {
+                q: "3. Si la otra persona tiene actitudes egoístas, desaparece de a ratos o no te da el lugar que querés...",
+                options: [
+                    { text: "Lo/la justifico ('tuvo un mal día', 'le cuesta abrirse') y sigo esperando que cambie.", score: 3 },
+                    { text: "Me enojo, se lo reclamo, pero al final sigo aceptando la misma situación.", score: 2 },
+                    { text: "Marco el límite. Si no hay reciprocidad ni respeto, me retiro del vínculo.", score: 0 }
+                ]
+            },
+            {
+                q: "4. Al momento de conocer a alguien que te atrae o intentar dar un paso más en el amor, ¿cuál es tu impulso?",
+                options: [
+                    { text: "Siento que 'no soy suficiente' o me da pánico el rechazo, así que me freno, me aíslo o me autosaboteo.", score: 3 },
+                    { text: "Me ilusiono muy rápido y termino dando el 100% por alguien que apenas conozco.", score: 2 },
+                    { text: "Voy despacio, disfruto conocer a la persona sin perder mi centro ni mi valor.", score: 0 }
+                ]
+            },
+            {
+                q: "5. ¿Qué pasa con tu tiempo personal o tus planes individuales cuando te enganchás con alguien?",
+                options: [
+                    { text: "Los cancelo o postergo para estar siempre disponible si la otra persona me busca.", score: 3 },
+                    { text: "Me cuesta mantener el equilibrio y descuido mis momentos a solas por estar pendiente.", score: 2 },
+                    { text: "Mantengo mis espacios personales y compromisos de forma innegociable.", score: 0 }
+                ]
+            },
+            {
+                q: "6. Cuando te proponés metas personales (entrenar, comer sano, avanzar en tus proyectos o cuidar tu salud), ¿qué suele pasar?",
+                options: [
+                    { text: "Me postergo constantemente; siempre hay una urgencia, un trabajo o un pedido de otra persona que va primero.", score: 3 },
+                    { text: "Empiezo con ganas pero a los pocos días pierdo la disciplina y me abandono.", score: 2 },
+                    { text: "Me priorizo, cumplo mis objetivos y sostengo mis hábitos con constancia.", score: 0 }
+                ]
+            },
+            {
+                q: "7. En el fondo, ¿sentís que tenés que estar 'perfecto/a' (bajar de peso, lograr más metas, ser más divertido/a) para recién ahí merecer que alguien te elija y te ame de verdad?",
+                options: [
+                    { text: "Sí, casi siempre siento que falta algo en mí para ser digno/a de un amor sano.", score: 3 },
+                    { text: "A veces me asalta esa duda cuando las cosas no salen bien en un vínculo.", score: 2 },
+                    { text: "No. Sé que con mis virtudes y defectos soy una persona valiosa y suficiente hoy.", score: 0 }
+                ]
+            },
+            {
+                q: "8. Cuando alguien cercano se molesta o se enoja por algo que dijiste o hiciste, ¿cuál es tu reacción automática?",
+                options: [
+                    { text: "Pido disculpas de inmediato (incluso sin estar convencido/a de haber actuado mal) e intento 'reparar' para que no haya conflicto.", score: 3 },
+                    { text: "Me lleno de dudas, quedo rumiando la situación y buscando aprobación para saber si está todo bien.", score: 2 },
+                    { text: "Evalúo si cometí un error. Si no es así, sostengo mi postura con calma y respeto el proceso del otro.", score: 0 }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let totalScore = 0;
+
+        function startTest() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question').innerText = q.q;
+            document.getElementById('progress').style.width = ((currentQuestion / questions.length) * 100) + '%';
+            
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            
+            q.options.forEach((opt) => {
+                const button = document.createElement('div');
+                button.className = 'option';
+                button.innerText = opt.text;
+                button.onclick = () => selectOption(opt.score);
+                optionsDiv.appendChild(button);
+            });
+        }
+
+        function selectOption(score) {
+            totalScore += score;
+            currentQuestion++;
+            
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+            
+            let title = '';
+            let text = '';
+
+            if (totalScore >= 17) {
+                title = "Alerta roja: Estás buscando tu valor afuera.";
+                text = "Tus respuestas indican que estás operando desde una herida de rechazo o abandono profunda. Por miedo a perder al otro o a no ser suficiente, te estás perdiendo a vos mismo/a. Aceptás migajas, te da terror poner límites por miedo a ser 'intenso/a' y postergás tu propia salud y tus proyectos personales. <strong>Esto no es falta de capacidad, es un patrón inconsciente y se puede sanar.</strong> Hablemos para diseñar un plan de mini-hábitos y recuperar tu verdadera confianza.";
+            } else if (totalScore >= 9) {
+                title = "En la cuerda floja: Das más de lo que recibís.";
+                text = "Tenés momentos de claridad, pero tus patrones complacientes siguen ganando terreno. A veces te da culpa pedir lo que te corresponde, te cuesta sostener hábitos de autocuidado cuando te enganchás con alguien y tu paz mental suele depender de la validación externa. Estás a tiempo de frenar esto antes de desgastarte emocionalmente. Te invito a una sesión para ver cómo ajustar esas tuercas.";
+            } else {
+                title = "Bases sólidas en tu autoconfianza.";
+                text = "¡Excelente! Sabés poner límites y tenés claro que tu valor no depende de la atención de nadie. Sin embargo, si llegaste hasta acá, puede que haya alguna situación o vínculo que te esté haciendo dudar últimamente. Si querés llevar tu autoconfianza al siguiente nivel y blindar tus hábitos personales, agendá una llamada conmigo.";
+            }
+
+            document.getElementById('result-title').innerText = title;
+            document.getElementById('result-text').innerHTML = text;
+        }
+    </script>
+</body>
+</html>
