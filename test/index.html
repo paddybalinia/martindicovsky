@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test de Autovaloración: ¿Estás buscando amor para sentirte suficiente?</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://test.martindicovsky.com.ar">
+    <meta property="og:title" content="¿Estás buscando valor afuera para sentirte suficiente?">
+    <meta property="og:description" content="Descubrí en menos de 2 minutos qué patrón inconsciente está frenando tu confianza, tus límites y tu bienestar emocional.">
+    <meta property="og:image" content="https://test.martindicovsky.com.ar/img/Open%20Graph.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1424">
+    <meta property="og:image:height" content="752">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://test.martindicovsky.com.ar/img/Open%20Graph.jpeg">
     <style>
         :root {
             --bg-color: #F8FAFC;       /* Fondo claro / perla */
@@ -150,7 +160,7 @@
     <div class="container result-container" id="result">
         <div class="result-title" id="result-title"></div>
         <div class="result-text" id="result-text"></div>
-        <a href="https://calendly.com/coach-martindicovsky/45" target="_blank" class="btn">Agendar mi Sesión de Diagnóstico</a>
+        <div id="result-button-container"></div>
     </div>
 
     <script>
@@ -264,20 +274,27 @@
             
             let title = '';
             let text = '';
+            let buttonHtml = '';
 
             if (totalScore >= 17) {
                 title = "Alerta roja: Estás buscando tu valor afuera.";
                 text = "Tus respuestas indican que estás operando desde una herida de rechazo o abandono profunda. Por miedo a perder al otro o a no ser suficiente, te estás perdiendo a vos mismo/a. Aceptás migajas, te da terror poner límites por miedo a ser 'intenso/a' y postergás tu propia salud y tus proyectos personales. <strong>Esto no es falta de capacidad, es un patrón inconsciente y se puede sanar.</strong> Hablemos para diseñar un plan de mini-hábitos y recuperar tu verdadera confianza.";
+                buttonHtml = '<a href="https://calendly.com/coach-martindicovsky/45" target="_blank" class="btn">Agendar mi Sesión de Diagnóstico</a>';
             } else if (totalScore >= 9) {
                 title = "En la cuerda floja: Das más de lo que recibís.";
                 text = "Tenés momentos de claridad, pero tus patrones complacientes siguen ganando terreno. A veces te da culpa pedir lo que te corresponde, te cuesta sostener hábitos de autocuidado cuando te enganchás con alguien y tu paz mental suele depender de la validación externa. Estás a tiempo de frenar esto antes de desgastarte emocionalmente. Te invito a una sesión para ver cómo ajustar esas tuercas.";
+                buttonHtml = '<a href="https://calendly.com/coach-martindicovsky/45" target="_blank" class="btn">Agendar mi Sesión de Diagnóstico</a>';
             } else {
-                title = "Bases sólidas en tu autoconfianza.";
-                text = "¡Excelente! Sabés poner límites y tenés claro que tu valor no depende de la atención de nadie. Sin embargo, si llegaste hasta acá, puede que haya alguna situación o vínculo que te esté haciendo dudar últimamente. Si querés llevar tu autoconfianza al siguiente nivel y blindar tus hábitos personales, agendá una llamada conmigo.";
+                title = "¡Felicitaciones! Tenés un centro y una confianza súper sanos.";
+                text = "Tus respuestas demuestran que sabés poner límites firmes, te priorizás sin culpa, no dependés de la aprobación ajena y cuidás tus hábitos y tu salud mental. En este momento <strong>no necesitás mi ayuda ni un proceso de coaching</strong>. ¡Seguí sosteniendo tu paz y tus espacios personales! Si sentís que a algún amigo/a le cuesta poner límites o la está pasando mal en sus relaciones, mandale este test para darle una mano.";
+                const shareUrl = encodeURIComponent("https://test.martindicovsky.com.ar");
+                const shareText = encodeURIComponent("¡Hola! Hice este Test de Autovaloración y Límites y me pareció excelente. Te lo comparto por si querés probarlo:");
+                buttonHtml = `<a href="https://api.whatsapp.com/send?text=${shareText}%20${shareUrl}" target="_blank" class="btn">Compartir Test por WhatsApp</a>`;
             }
 
             document.getElementById('result-title').innerText = title;
             document.getElementById('result-text').innerHTML = text;
+            document.getElementById('result-button-container').innerHTML = buttonHtml;
         }
     </script>
 </body>
