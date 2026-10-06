@@ -126,70 +126,49 @@ export const noEsPara = [
 
 export const testimonios = [
   {
-    name: "Antonio García",
-    role: "Cliente del programa",
+    name: "Judith Medina",
     quote:
-      "Cambié la rutina y acomodé mis tiempos para no vivir agotado. Lo confirmé esta semana: pasaron situaciones difíciles que antes me habrían paralizado o hecho perder el ritmo, pero hoy tengo la estructura para no frenarme.",
+      "Mis sesiones con martin me ayudaron a valorarme, fortalecerme, mejorar mi autoestima. Me llevo herramientas en cada sesión. Lectura agradable y sobre todo amor propio.",
   },
   {
-    name: "Henry Gil",
-    role: "Cliente del programa",
-    quote:
-      "Vivía atrapado en la completa complacencia con los demás, lleno de culpa y frustración. El programa fue tan práctico que lo primero que bajó fue mi ansiedad. Empecé a comunicarme mejor y los resultados se vieron rapidísimo en mi relación de pareja, familia y en mi trabajo.",
-  },
-  {
-    name: "Marta Fernandez",
-    role: "Cliente del programa",
-    quote:
-      "No tenía confianza en mí misma. La inseguridad afectaba mis relaciones y me mantenía estancada y con angustia en un trabajo que no soportaba. Gracias al programa pude recuperar mi confianza, dejar de fumar, viajar sola. Y además, renuncié a ese trabajo y hoy por fin me dedico a lo que realmente me apasiona.",
-  },
-  {
-    name: "Felicitas Tapia",
-    role: "Cliente del programa",
-    quote:
-      "Ahora me amo y ya no quiero controlar al mundo. Para poner límites sin culpa tuve que trabajar mi autoestima con las herramientas del programa. Lo hice y soy feliz!",
-  },
-  {
-    name: "Ariel Mataitis",
-    role: "Cliente del programa",
-    quote:
-      "Martín ha sido un necesario apoyo para la toma de decisiones claves en mi vida personal y profesional. Empático, sincero y con enorme capacidad de escucha activa, tiene la habilidad de conducirte a una profunda reflexión y análisis. No dudo en recomendarlo.",
-  },
-  {
-    name: "Leandro Turco",
-    role: "Cliente del programa",
+    name: "Lenny Lennards",
     quote:
       "La ayuda de Martín fue fundamental para que pudiera encontrar mi verdadero potencial y aprendiera a explotarlo, tanto en lo profesional como en lo personal. Soy hoy una mejor versión de mí mismo gracias a sus consejos, su visión, su capacidad de desafiar mis creencias limitantes y las herramientas que fue proporcionándome para cada reto que hubo que superar.",
   },
   {
-    name: "Lenis Villalobos",
-    role: "Cliente del programa",
+    name: "Felicitas Tapia",
     quote:
-      "Recuperé mi confianza. Pude implementar hábitos saludables y priorizarme sin culpa. Y como si fuera poco, conseguí el trabajo de mis sueños!",
+      "Martin, ha sido netamente luz, en el momento q atravesaba. Con las herramientas q me dejó, me manejo cotidianamente y aunque todo lleva un proceso, entendí q había elegido bien a mi coach. A pesar q estoy muy bien, él siempre está presente, con un audio un mensaje, para saber cómo sigue mi existencia 🤗! Gracias por estar en mi vida Martín!!!!😊",
   },
   {
-    name: "Carla Costa",
-    role: "Cliente del programa",
+    name: "Antonio G",
     quote:
-      "Siento que soy una nueva persona. Aprendí a sostener los cambios de hábitos diarios con foco y disciplina, pero sin ser tan drástica conmigo si me caigo. Hoy logro ver mi evolución real y estoy comenzando a vivir una etapa totalmente distinta.",
+      "La sesión con Martín fue muy natural. Hablamos de todo un poco, ya que en ese momento yo estaba concretando varios proyectos. Además, Martín es un profesional que te acompaña incluso fuera de la sesión. Lo recomiendo al 100%.",
   },
   {
-    name: "Luján Reyes",
-    role: "Cliente del programa",
+    name: "Samira Reyes",
     quote:
-      "Antes me paralizaban mis miedos y me costaba enfrentarlos. Con las herramientas que me diste logré superarlos, pasar a la acción y hoy eso me trae una tranquilidad enorme. Me enseñaste a vivir en el presente, a disfrutar y a entender que las cosas que pasan no son problemas salvo que yo elija verlas así. Cuando te animás a enfrentar lo que te asusta, el después es mucho más lindo. Lo que lograste en mí es gigante. ¡Gracias!",
+      "Cuando estás atrapado en un problema, cambiar la situación parece imposible y es normal dudar antes de buscar ayuda. A mí me pasó, pero Martín desde el principio me generó una comodidad y confianza única. Vale cada peso y cada segundo del proceso. Con su guía aprendí a gestionar mis relaciones, a ver las cosas desde otra perspectiva y a frenar los pensamientos negativos. Gracias a esto, avancé en mi carrera, mejoré mis vínculos personales, y potencié mis hábitos diarios. Realmente marcó un antes y un después en mi vida. ¡Un camino de crecimiento que valió la pena cada segundo y en el que seguimos trabajando!",
   },
   {
-    name: "Judith Medina",
-    role: "Cliente del programa",
+    name: "Ariel Mataitis",
     quote:
-      "Gracias a lo que trabajamos en las sesiones, dejé de repetir patrones negativos a sentirme profundamente orgullosa de mí. Aprendí a reconocerme tanto en lo bueno como en lo malo, a confiar en mis capacidades y a poner límites firmes: hoy no hago tratos que no quiero ni negocio lo que no estoy dispuesta a ceder. Hoy me encuentro amándome y aceptándome tal cual soy.",
+      "Martín ha sido un necesario apoyo para la toma de decisiones claves en mi vida personal y profesional. Empático, sincero y con enorme capacidad de escucha activa, tiene la habilidad de conducirte a una profunda reflexión y análisis. No dudo en recomendarlo.",
+  },
+  {
+    name: "Tom Elizalde",
+    quote:
+      "Mi experiencia con Martín ha sido y sigue siendo muy positiva. En los últimos 5 años me ha ayudado con mi desarrollo profesional, moldeando y conceptualizando mi liderazgo, la comunicación, a identificar sesgos y encontrar herramientas para lidiar con presiones, balance vida/trabajo y objetivos personales. Si estás buscando o necesitando un cambio, y no sabés por donde arrancar, llamalo.",
+  },
+  {
+    name: "Patricio Balinia",
+    quote:
+      "Hacer un proceso de coaching 1 a 1 con Martín fue clave para mi día a día. Estaba mal organizado y me faltaba disciplina para sostener proyectos. Me ayudó a trabajar mis hábitos, ordenar prioridades y ganar muchísima confianza en mí mismo. Se nota su compromiso y profesionalismo!",
   },
   {
     name: "Yenny Silva",
-    role: "Cliente del programa",
     quote:
-      "El método SIA fortaleció mi amor propio, me enseñó a poner límites con respeto y a dejar de conformarme con lo que no me hace bien. Fue una transformación profunda: reconocí mi valor y empecé a tomar decisiones más conscientes. Un antes y un después en mi vida.",
+      "El método SIA fortaleció mi amor propio, me enseñó a poner límites con respeto y a dejar de conformarme con lo que no me hace bien. Fue una transformación profunda: reconocí mi valor y empecé a tomar decisiones más conscientes. Un antes y un después en mi vida. Gracias Martin 🙏",
   },
 ].map((item) => ({ ...item, rating: 5 as const }));
 
