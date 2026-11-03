@@ -123,15 +123,7 @@ export function getPersonJsonLd(): Schema {
       "liderazgo",
       "Método S.I.A.",
     ],
-    knowsLanguage: [
-      { "@type": "Language", name: "Español" },
-      { "@type": "Language", name: "Inglés" },
-    ],
-    areaServed: [
-      { "@type": "Country", name: "Argentina" },
-      { "@type": "Place", name: "Latinoamérica" },
-      { "@type": "Place", name: "Europa" },
-    ],
+    knowsLanguage: ["es", "en"],
     worksFor: { "@id": businessId },
   };
 }
@@ -160,7 +152,13 @@ export function getLocalBusinessJsonLd(): Schema {
       { "@type": "Place", name: "Ciudad Autónoma de Buenos Aires" },
       { "@type": "Country", name: "Argentina" },
     ],
-    availableLanguage: ["Español", "Inglés"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: site.email,
+      telephone: negocio.telefonoTel,
+      availableLanguage: ["es", "en"],
+    },
     founder: { "@id": personId },
     employee: { "@id": personId },
     ...getReviewJsonLd(),
@@ -236,6 +234,7 @@ export function getCoachingServiceJsonLd(description: string): Schema {
     areaServed: [
       { "@type": "Country", name: "Argentina" },
       { "@type": "Place", name: "Latinoamérica" },
+      { "@type": "Place", name: "Europa" },
     ],
     availableChannel: {
       "@type": "ServiceChannel",
