@@ -3,11 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import {
   ejes,
+  ejesIA,
   email,
   facilitators,
   links,
   metodo,
-  modulosIA,
   programaFacts,
   tallerFacts,
 } from "../content/site";
@@ -16,20 +16,20 @@ import {
 <Layout>
   <section id="inicio" class="hero">
     <div class="container">
-      <p class="eyebrow">Joriki | Consultora de Liderazgo &amp; Equipos</p>
+      <p class="eyebrow eyebrow--soft">Liderazgo y conexión humana</p>
       <h1 class="display">
-        Liderazgo práctico y <em>conexión humana</em> para equipos en transformación.
+        Líderes que delegan, se comunican con claridad y recuperan su tiempo.
       </h1>
       <p class="lead">
-        Programas ejecutivos diseñados por Joriki para destrabar mandos medios, resolver fricciones operativas y
-        potenciar el rendimiento de tus equipos (presenciales, híbridos o remotos).
+        Programas ejecutivos diseñados por Joriki para destrabar mandos medios: herramientas prácticas para delegar
+        con confianza, resolver roces cotidianos y trabajar sin desgaste (presenciales, híbridos o remotos).
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary btn--lg" href={links.callout} target="_blank" rel="noopener noreferrer">
           Agendar llamada de diagnóstico
           <Icon name="arrow-right" size="sm" />
         </a>
-        <span class="hero__note">Para RR.HH., Operaciones y Dirección</span>
+        <span class="hero__note">Para gerencias de Personas, Operaciones y Dirección</span>
       </div>
     </div>
   </section>
@@ -85,48 +85,46 @@ import {
         <article class="program program--ink">
           <span class="badge badge--accent">
             <Icon name="sparkles" size="xs" />
-            Novedad / Vanguardia
+            Taller Especial
           </span>
           <h3 class="display">Liderazgo Humano en la Era de la IA</h3>
           <p class="program__intro program__intro--ink">
-            Las organizaciones invierten fortunas en IA para ganar velocidad, pero los equipos sufren incertidumbre,
-            desconexión y sobrecarga. Un algoritmo redacta un reporte en diez segundos, pero no puede mirar a los
-            ojos a alguien y preguntarle <em>“¿te pasa algo?”</em>
+            Herramientas para liderar personas, contener la incertidumbre y sostener el vínculo en equipos que incorporan tecnología.
           </p>
-          <p class="display program__thesis">La IA automatiza la tarea; el líder gestiona el impacto humano.</p>
-          <ol class="modules">
+          <ul class="axis">
             {
-              modulosIA.map((item) => (
-                <li class="module">
-                  <div class="module__head">
-                    <span class="display module__n">{item.n}</span>
-                    <div>
-                      <p class="module__title">{item.title}</p>
-                      <p class="module__kicker">{item.kicker}</p>
-                    </div>
-                  </div>
-                  <p>{item.text}</p>
-                </li>
-              ))
-            }
-          </ol>
-          <ul class="facts facts--ink">
-            {
-              tallerFacts.map((item) => (
+              ejesIA.map((item) => (
                 <li>
-                  <Icon name={item.icon} size="sm" />
-                  <span>{item.label}</span>
+                  <span class="axis__icon">
+                    <Icon name={item.icon} />
+                  </span>
+                  <div>
+                    <p class="axis__title">{item.title}</p>
+                    <p class="axis__text">{item.text}</p>
+                  </div>
                 </li>
               ))
             }
           </ul>
-          <p class="program__note program__note--ink">
-            Aprendizaje experiencial: debate y roleplay, cero monólogos teóricos.
-          </p>
-          <a class="btn btn--light btn--md" href={links.taller} target="_blank" rel="noopener noreferrer">
-            Consultar por este taller
-            <Icon name="arrow-right" size="sm" />
-          </a>
+          <div class="program__foot">
+            <ul class="facts facts--ink">
+              {
+                tallerFacts.map((item) => (
+                  <li>
+                    <Icon name={item.icon} size="sm" />
+                    <span>{item.label}</span>
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="program__note program__note--ink">
+              Aprendizaje experiencial: debate y roleplay, cero monólogos teóricos.
+            </p>
+            <a class="btn btn--light btn--md" href={links.taller} target="_blank" rel="noopener noreferrer">
+              Consultar por este taller
+              <Icon name="arrow-right" size="sm" />
+            </a>
+          </div>
         </article>
       </div>
     </div>
@@ -135,7 +133,7 @@ import {
   <section id="facilitadores" class="section">
     <div class="container">
       <p class="eyebrow">Los fundadores de Joriki</p>
-      <h2 class="display section-title section-title--narrow">Quiénes facilitan</h2>
+      <h2 class="display section-title section-title--narrow">Quiénes somos</h2>
       <div class="people">
         {
           facilitators.map((person) => (
@@ -157,7 +155,7 @@ import {
       </div>
       <blockquote class="display pullquote">
         “En Joriki unimos la profundidad del comportamiento humano con el
-        <span> pragmatismo operativo</span> del management.”
+        <span> pragmatismo operativo</span> de la gestión.”
       </blockquote>
     </div>
   </section>

@@ -1,21 +1,22 @@
 :root {
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-sans: "Manrope", system-ui, sans-serif;
-  --background: oklch(0.985 0.006 85);
-  --foreground: oklch(0.22 0.03 255);
-  --card: oklch(1 0 0);
-  --primary: oklch(0.28 0.06 255);
-  --primary-foreground: oklch(0.98 0.006 85);
-  --secondary: oklch(0.95 0.012 85);
-  --muted-foreground: oklch(0.5 0.025 255);
-  --accent: oklch(0.68 0.12 55);
-  --accent-foreground: oklch(0.99 0 0);
-  --highlight: oklch(0.93 0.045 65);
-  --ink: oklch(0.2 0.04 258);
-  --ink-foreground: oklch(0.96 0.01 85);
-  --border: oklch(0.9 0.012 85);
-  --shadow-soft: 0 1px 2px oklch(0.2 0.04 258 / 0.04), 0 12px 40px -12px oklch(0.2 0.04 258 / 0.14);
-  --gradient-ink: radial-gradient(120% 80% at 85% 0%, oklch(0.34 0.07 250) 0%, var(--ink) 55%);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --background: oklch(0.2 0.025 230);
+  --foreground: oklch(0.95 0.025 85);
+  --card: oklch(0.24 0.03 230);
+  --primary: oklch(0.7 0.12 75);
+  --primary-foreground: oklch(0.18 0.025 230);
+  --secondary: oklch(0.17 0.022 230);
+  --muted-foreground: oklch(0.75 0.025 85);
+  --accent: oklch(0.72 0.12 75);
+  --accent-foreground: oklch(0.18 0.025 230);
+  --highlight: oklch(0.32 0.05 75);
+  --gold-soft: oklch(0.78 0.09 78);
+  --ink: oklch(0.95 0.025 85);
+  --ink-foreground: oklch(0.2 0.025 230);
+  --border: oklch(0.95 0.025 85 / 12%);
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.2), 0 20px 50px -20px oklch(0 0 0 / 0.5);
+  --gradient-ink: radial-gradient(120% 90% at 85% 0%, oklch(0.88 0.06 80) 0%, var(--ink) 55%);
   --ink-75: color-mix(in oklch, var(--ink-foreground) 75%, transparent);
   --ink-70: color-mix(in oklch, var(--ink-foreground) 70%, transparent);
   --ink-50: color-mix(in oklch, var(--ink-foreground) 50%, transparent);
@@ -92,7 +93,7 @@ section[id] {
 
 .display {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.01em;
 }
 
@@ -123,9 +124,17 @@ section[id] {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.eyebrow--soft {
+  color: var(--gold-soft);
+}
+
+.eyebrow--footer {
+  letter-spacing: 0.2em;
 }
 
 .btn {
@@ -178,8 +187,9 @@ section[id] {
 }
 
 .btn--nav:hover {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
 }
 
 /* Header */
@@ -200,9 +210,25 @@ section[id] {
   padding-block: 1rem;
 }
 
-.logo {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.logo-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 3rem;
+  width: auto;
+  aspect-ratio: 1657 / 540;
+}
+
+.logo-img--footer {
+  height: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .logo-img {
+    height: 3.5rem;
+  }
 }
 
 .site-nav {
@@ -229,17 +255,16 @@ section[id] {
 
 /* Hero */
 .hero {
-  padding: 5rem 0 6rem;
+  padding: 6rem 0 7rem;
 }
 
 .hero h1 {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   max-width: 56rem;
-  font-size: 3rem;
-  line-height: 1.02;
+  font-size: 2.25rem;
+  line-height: 1.08;
 }
 
-.hero h1 em,
 .cta__panel h2 em,
 .pullquote span {
   color: var(--accent);
@@ -248,7 +273,7 @@ section[id] {
 .lead {
   margin-top: 2rem;
   max-width: 42rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.625;
   color: var(--muted-foreground);
 }
@@ -267,24 +292,30 @@ section[id] {
   color: var(--muted-foreground);
 }
 
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
 @media (min-width: 768px) {
   .hero {
     padding-top: 8rem;
+    padding-bottom: 9rem;
   }
 
   .hero h1 {
-    font-size: 4.5rem;
+    font-size: 3.75rem;
   }
 
   .lead {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1.125rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero h1 {
-    font-size: 6rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -377,7 +408,6 @@ section[id] {
 }
 
 .program__intro--ink {
-  margin-top: 1rem;
   line-height: 1.625;
   color: var(--ink-75);
 }
@@ -475,6 +505,15 @@ section[id] {
   color: var(--muted-foreground);
 }
 
+.program--ink .axis__icon {
+  background: var(--ink-10);
+  color: var(--accent);
+}
+
+.program--ink .axis__text {
+  color: var(--ink-70);
+}
+
 .modules {
   display: flex;
   flex-direction: column;
@@ -537,7 +576,6 @@ section[id] {
 }
 
 .facts--ink {
-  margin-top: 2rem;
   border-top-color: var(--ink-10);
   color: var(--ink-80);
 }
@@ -717,11 +755,6 @@ section[id] {
 .site-footer__grid {
   display: grid;
   gap: 3rem;
-}
-
-.site-footer__brand {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .site-footer__text {

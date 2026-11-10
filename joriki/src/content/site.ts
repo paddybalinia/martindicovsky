@@ -2,10 +2,19 @@ import type { IconName } from "../components/icons";
 
 export const siteName = "Joriki";
 
-export const title = "Joriki | Programas Ejecutivos de Liderazgo y Equipos";
+export const title = "Joriki | Liderazgo y conexión humana";
 
 export const description =
-  "Programas in-company de liderazgo práctico y conexión humana: conflictos, acuerdos, feedback y liderazgo en la era de la IA.";
+  "Formando líderes que se comunican con claridad, delegan con criterio y recuperan su tiempo.";
+
+export const ogTitle = "Líderes que delegan, se comunican con claridad y recuperan su tiempo.";
+
+export const ogDescription =
+  "Programas ejecutivos diseñados para implementar herramientas prácticas: delegar, resolver roces cotidianos y potenciar equipos.";
+
+export const ogImagePath = "/og-image.png";
+
+export const ogImageAlt = "Joriki · Liderazgo y conexión humana";
 
 export const email = "coaching@martindicovsky.com.ar";
 
@@ -26,22 +35,20 @@ export const links = {
 
 export const whatsappLabel = "WhatsApp: +54 9 11 2252-8446";
 
-export const address = "Los Malvones 3953, B1669AAA Pilar, Provincia de Buenos Aires";
+export const address = "Provincia de Buenos Aires, Argentina";
 
 export const negocio = {
   nombre: "Joriki Consultora",
-  calle: "Los Malvones 3953",
-  localidad: "Pilar",
   provincia: "Buenos Aires",
-  codigoPostal: "B1669AAA",
   telefono: "+54 9 11 2252-8446",
-  geo: {
-    region: "AR-B",
-    placename: "Pilar, Buenos Aires",
-    latitude: -34.4292272,
-    longitude: -58.7938917,
-  },
 };
+
+export const logo = {
+  src: "/images/joriki-logo.png",
+  alt: "Joriki · Liderazgo y conexión humana",
+  width: 1657,
+  height: 540,
+} as const;
 
 export const headerNav = [
   { label: "Programas", href: "#programas" },
@@ -64,11 +71,7 @@ export const socials: { icon: IconName; label: string; href: string }[] = [
   { icon: "audio-lines", label: "Spotify", href: links.spotify },
 ];
 
-export const hours = [
-  ["Lunes a Viernes", "8:00 – 19:00"],
-  ["Sábado", "Cerrado"],
-  ["Domingo", "Cerrado"],
-] as const;
+export const hours = [["Lunes a Viernes", "8:00 – 19:00"]] as const;
 
 export const ejes: { icon: IconName; title: string; text: string }[] = [
   {
@@ -98,42 +101,44 @@ export const ejes: { icon: IconName; title: string; text: string }[] = [
   },
 ];
 
-export const modulosIA = [
+export const ejesIA: { icon: IconName; title: string; text: string }[] = [
   {
-    n: "01",
-    title: "La Paradoja del Algoritmo",
-    kicker: "Lectura del subtexto",
-    text: "Calibrar lo emocional y gestual frente a la frialdad de la pantalla. Roleplay para abrir conversaciones de clima de equipo sin caer en métricas.",
+    icon: "sliders-horizontal",
+    title: "Criterio vs. Automatización",
+    text: "Sostener la escucha y la cercanía cuando los procesos se digitalizan.",
   },
   {
-    n: "02",
-    title: "El Antídoto a la Incertidumbre",
-    kicker: "Seguridad psicológica",
-    text: "Validar el criterio humano, habilitar el error como aprendizaje y desactivar el miedo al reemplazo tecnológico.",
+    icon: "shield-check",
+    title: "Gestión de la Incertidumbre",
+    text: "Desactivar temores y generar seguridad psicológica frente a los cambios tecnológicos.",
   },
   {
-    n: "03",
-    title: "Escucha Activa vs. Velocidad Transaccional",
-    kicker: "Clínica de casos",
-    text: "Cómo reinvertir el tiempo que la IA nos ahorra en el desarrollo real de las personas. Casos reales en vivo.",
+    icon: "messages-square",
+    title: "Conversaciones Reales",
+    text: "Abordar lo que la pantalla no muestra: desmotivación, roces de equipo y clima laboral.",
   },
-] as const;
+  {
+    icon: "user-check",
+    title: "El Rol del Líder",
+    text: "Cómo transformar el tiempo que ahorra la tecnología en acompañamiento y desarrollo de personas.",
+  },
+];
 
 export const metodo: { icon: IconName; title: string; text: string }[] = [
   {
     icon: "target",
     title: "50% Práctica / 50% Concepto",
-    text: "Roleplays, simulaciones de casos reales y dinámicas 100% interactivas. Cero monólogos de teoría: cada concepto está pensado para que los líderes puedan aplicarlo de forma inmediata en el día a día con sus equipos.",
+    text: "Simulaciones de casos reales, roleplays y dinámicas 100% aplicadas. Cero monólogos teóricos: cada concepto se entrena pensando en el día a día operativo del líder.",
   },
   {
     icon: "video",
-    title: "Sin fatiga de pantalla",
-    text: "Dinámicas ágiles que sostienen la atención y la participación, en la sala o en pantalla.",
+    title: "Sin fatiga ni relleno",
+    text: "Dinámicas ágiles y participativas diseñadas para sostener el foco de principio a fin, tanto en sala presencial como en entornos virtuales.",
   },
   {
     icon: "zap",
     title: "Transferencia Inmediata",
-    text: "Herramientas aplicables a las reuniones del día siguiente.",
+    text: "Ni charlas motivacionales ni teoría abstracta: herramientas prácticas para resolver los problemas del día a día.",
   },
 ];
 
@@ -166,6 +171,6 @@ export const facilitators = [
     height: 250,
     name: "Francisco Cuerda",
     role: "Co-Founder de Joriki | Psicólogo Laboral y Organizacional",
-    bio: "Psicólogo Laboral y Organizacional con más de 20 años de experiencia en gestión del talento, selección de personal, evaluación psicotécnica, capacitación y consultoría organizacional. Combina la perspectiva sistémica y la psicología aplicada para acompañar procesos de desarrollo humano, optimizar equipos de trabajo y fortalecer la cultura organizacional.",
+    bio: "Especialista con más de 20 años de experiencia en gestión del talento, selección de personal, evaluación psicotécnica y consultoría. Combina la perspectiva sistémica con la psicología aplicada para acompañar el desarrollo humano, ordenar dinámicas de equipo y fortalecer la cultura interna de las organizaciones.",
   },
 ] as const;

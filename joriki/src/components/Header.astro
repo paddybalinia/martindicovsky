@@ -1,10 +1,18 @@
 ---
-import { headerNav, links } from "../content/site";
+import { headerNav, links, logo } from "../content/site";
 ---
 
 <header class="site-header">
   <nav class="container site-header__bar" aria-label="Principal">
-    <a class="logo display" href="#">Joriki</a>
+    <a class="logo-link" href="#" aria-label="Joriki">
+      <img
+        class="logo-img"
+        src={logo.src}
+        alt={logo.alt}
+        width={logo.width}
+        height={logo.height}
+      />
+    </a>
     <div class="site-nav">
       {headerNav.map((item) => <a href={item.href}>{item.label}</a>)}
     </div>

@@ -2,7 +2,17 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { description as defaultDescription, email, negocio, siteName, title as defaultTitle } from "../content/site";
+import {
+  description as defaultDescription,
+  email,
+  negocio,
+  ogDescription as defaultOgDescription,
+  ogImageAlt,
+  ogImagePath,
+  ogTitle as defaultOgTitle,
+  siteName,
+  title as defaultTitle,
+} from "../content/site";
 
 interface Props {
   title?: string;
@@ -20,6 +30,9 @@ const {
 
 const origin = Astro.site ? Astro.site.href.replace(/\/$/, "") : "";
 const canonical = !noIndex && origin ? (path === "/" ? `${origin}/` : `${origin}${path}`) : undefined;
+const ogTitle = noIndex ? title : defaultOgTitle;
+const ogDescription = noIndex ? description : defaultOgDescription;
+const ogImage = origin ? `${origin}${ogImagePath}` : ogImagePath;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -30,10 +43,7 @@ const jsonLd = {
   telephone: negocio.telefono,
   address: {
     "@type": "PostalAddress",
-    streetAddress: negocio.calle,
-    postalCode: negocio.codigoPostal,
-    addressLocality: negocio.localidad,
-    addressRegion: negocio.provincia,
+    addressRegion: "Provincia de Buenos Aires",
     addressCountry: "AR",
   },
   ...(canonical ? { url: canonical } : {}),
@@ -50,26 +60,37 @@ const jsonLd = {
     <meta name="author" content={siteName} />
     <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     {canonical && <link rel="canonical" href={canonical} />}
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600;700&display=swap"
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
     {canonical && <meta property="og:url" content={canonical} />}
+    {
+      !noIndex && (
+        <>
+          <meta property="og:image" content={ogImage} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={ogImageAlt} />
+        </>
+      )
+    }
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="geo.region" content={negocio.geo.region} />
-    <meta name="geo.placename" content={negocio.geo.placename} />
-    <meta name="geo.position" content={`${negocio.geo.latitude};${negocio.geo.longitude}`} />
-    <meta name="ICBM" content={`${negocio.geo.latitude}, ${negocio.geo.longitude}`} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    {!noIndex && <meta name="twitter:image" content={ogImage} />}
     {!noIndex && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
