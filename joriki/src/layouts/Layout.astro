@@ -19,7 +19,7 @@ const {
 } = Astro.props;
 
 const origin = Astro.site ? Astro.site.href.replace(/\/$/, "") : "";
-const canonical = origin ? (path === "/" ? `${origin}/` : `${origin}${path}`) : undefined;
+const canonical = !noIndex && origin ? (path === "/" ? `${origin}/` : `${origin}${path}`) : undefined;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -70,7 +70,7 @@ const jsonLd = {
     <meta name="geo.placename" content={negocio.geo.placename} />
     <meta name="geo.position" content={`${negocio.geo.latitude};${negocio.geo.longitude}`} />
     <meta name="ICBM" content={`${negocio.geo.latitude}, ${negocio.geo.longitude}`} />
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {!noIndex && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
     <Header />
