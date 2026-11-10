@@ -1,6 +1,6 @@
 ---
 import Icon from "./Icon.astro";
-import { address, email, footerNav, hours, links, socials, whatsappLabel } from "../content/site";
+import { address, email, footerNav, hours, links, logo, socials, whatsappLabel } from "../content/site";
 
 const year = new Date().getFullYear();
 ---
@@ -9,7 +9,13 @@ const year = new Date().getFullYear();
   <div class="container site-footer__inner">
   <div class="site-footer__grid">
     <div>
-      <p class="display site-footer__brand">Joriki Consultora</p>
+      <img
+        class="logo-img logo-img--footer"
+        src={logo.src}
+        alt="Joriki Consultora"
+        width={logo.width}
+        height={logo.height}
+      />
       <p class="site-footer__text">
         Desarrollo de mandos medios, dinámicas de equipo y liderazgo humano para organizaciones en transformación.
       </p>
@@ -25,7 +31,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <p class="eyebrow">Navegación</p>
+      <p class="eyebrow eyebrow--footer">Navegación</p>
       <ul class="site-footer__links">
         {
           footerNav.map((item) => (
@@ -38,7 +44,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <p class="eyebrow">Contacto</p>
+      <p class="eyebrow eyebrow--footer">Contacto</p>
       <ul class="site-footer__links site-footer__links--contact">
         <li>
           <a class="contact-line" href={links.contact}>
@@ -60,7 +66,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <p class="eyebrow">Horario de atención</p>
+      <p class="eyebrow eyebrow--footer">Horario de atención</p>
       <ul class="site-footer__links">
         {
           hours.map(([day, time]) => (
