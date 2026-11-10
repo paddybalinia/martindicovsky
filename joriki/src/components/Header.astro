@@ -1,0 +1,13 @@
+---
+import { headerNav, links } from "../content/site";
+---
+
+<header class="site-header">
+  <nav class="container site-header__bar" aria-label="Principal">
+    <a class="logo display" href="#">Joriki</a>
+    <div class="site-nav">
+      {headerNav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+    <a class="btn btn--nav" href={links.callout} target="_blank" rel="noopener noreferrer">Contacto</a>
+  </nav>
+</header>

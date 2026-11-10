@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Página no encontrada — Joriki"
+  description="Esta página no existe. Volvé al inicio de Joriki."
+  path="/404"
+  noIndex
+>
+  <div class="not-found">
+    <p class="display not-found__code">404</p>
+    <h1 class="display">Esta página no existe</h1>
+    <p>El enlace puede estar viejo o la página se movió.</p>
+    <a class="btn btn--primary btn--md" href="/">Volver al inicio</a>
+  </div>
+</Layout>

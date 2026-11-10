@@ -1,0 +1,202 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import {
+  ejes,
+  email,
+  facilitators,
+  links,
+  metodo,
+  modulosIA,
+  programaFacts,
+  tallerFacts,
+} from "../content/site";
+---
+
+<Layout>
+  <section id="inicio" class="hero">
+    <div class="container">
+      <p class="eyebrow">Joriki | Consultora de Liderazgo &amp; Equipos</p>
+      <h1 class="display">
+        Liderazgo práctico y <em>conexión humana</em> para equipos en transformación.
+      </h1>
+      <p class="lead">
+        Programas ejecutivos diseñados por Joriki para destrabar mandos medios, resolver fricciones operativas y
+        potenciar el rendimiento de tus equipos (presenciales, híbridos o remotos).
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href={links.callout} target="_blank" rel="noopener noreferrer">
+          Agendar llamada de diagnóstico
+          <Icon name="arrow-right" size="sm" />
+        </a>
+        <span class="hero__note">Para RR.HH., Operaciones y Dirección</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="programas" class="band">
+    <div class="container">
+      <p class="eyebrow">Programas de formación</p>
+      <h2 class="display section-title">Dos caminos, un mismo objetivo: mejores líderes.</h2>
+
+      <div class="program-grid">
+        <article class="program program--light">
+          <span class="badge">Programa Base de Liderazgo</span>
+          <h3 class="display">Desarrollo de Liderazgo y Gestión de Equipos</h3>
+          <p class="program__intro">
+            Herramientas para mejorar la forma de relacionarnos en el trabajo, con impacto en el bienestar y el rendimiento.
+          </p>
+          <ul class="axis">
+            {
+              ejes.map((item) => (
+                <li>
+                  <span class="axis__icon">
+                    <Icon name={item.icon} />
+                  </span>
+                  <div>
+                    <p class="axis__title">{item.title}</p>
+                    <p class="axis__text">{item.text}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+          <div class="program__foot">
+            <ul class="facts">
+              {
+                programaFacts.map((item) => (
+                  <li>
+                    <Icon name={item.icon} size="sm" />
+                    <span>{item.label}</span>
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="program__note">
+              Modular e interactivo, con dinámicas grupales y aplicación directa al día a día. Cada módulo puede contratarse por separado.
+            </p>
+            <a class="btn btn--primary btn--md" href={links.programa} target="_blank" rel="noopener noreferrer">
+              Consultar por este programa
+              <Icon name="arrow-right" size="sm" />
+            </a>
+          </div>
+        </article>
+
+        <article class="program program--ink">
+          <span class="badge badge--accent">
+            <Icon name="sparkles" size="xs" />
+            Novedad / Vanguardia
+          </span>
+          <h3 class="display">Liderazgo Humano en la Era de la IA</h3>
+          <p class="program__intro program__intro--ink">
+            Las organizaciones invierten fortunas en IA para ganar velocidad, pero los equipos sufren incertidumbre,
+            desconexión y sobrecarga. Un algoritmo redacta un reporte en diez segundos, pero no puede mirar a los
+            ojos a alguien y preguntarle <em>“¿te pasa algo?”</em>
+          </p>
+          <p class="display program__thesis">La IA automatiza la tarea; el líder gestiona el impacto humano.</p>
+          <ol class="modules">
+            {
+              modulosIA.map((item) => (
+                <li class="module">
+                  <div class="module__head">
+                    <span class="display module__n">{item.n}</span>
+                    <div>
+                      <p class="module__title">{item.title}</p>
+                      <p class="module__kicker">{item.kicker}</p>
+                    </div>
+                  </div>
+                  <p>{item.text}</p>
+                </li>
+              ))
+            }
+          </ol>
+          <ul class="facts facts--ink">
+            {
+              tallerFacts.map((item) => (
+                <li>
+                  <Icon name={item.icon} size="sm" />
+                  <span>{item.label}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="program__note program__note--ink">
+            Aprendizaje experiencial: debate y roleplay, cero monólogos teóricos.
+          </p>
+          <a class="btn btn--light btn--md" href={links.taller} target="_blank" rel="noopener noreferrer">
+            Consultar por este taller
+            <Icon name="arrow-right" size="sm" />
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="facilitadores" class="section">
+    <div class="container">
+      <p class="eyebrow">Los fundadores de Joriki</p>
+      <h2 class="display section-title section-title--narrow">Quiénes facilitan</h2>
+      <div class="people">
+        {
+          facilitators.map((person) => (
+            <article class="person">
+              <img
+                class="person__photo"
+                src={person.img}
+                alt={`Foto de ${person.name}`}
+                width={person.width}
+                height={person.height}
+                loading="lazy"
+              />
+              <h3 class="display">{person.name}</h3>
+              <p class="person__role">{person.role}</p>
+              <p class="person__bio">{person.bio}</p>
+            </article>
+          ))
+        }
+      </div>
+      <blockquote class="display pullquote">
+        “En Joriki unimos la profundidad del comportamiento humano con el
+        <span> pragmatismo operativo</span> del management.”
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="metodologia" class="band">
+    <div class="container">
+      <p class="eyebrow">Metodología</p>
+      <h2 class="display section-title">Por qué funciona</h2>
+      <div class="method-grid">
+        {
+          metodo.map((item) => (
+            <article class="method-card">
+              <span class="method-card__icon">
+                <Icon name={item.icon} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="cta">
+    <div class="cta__panel">
+      <h2 class="display">
+        Liderar personas no tiene por qué ser un <em>dolor de cabeza</em>.
+      </h2>
+      <p>
+        Tus mandos medios no necesitan más teoría ni recetas mágicas; necesitan herramientas prácticas para resolver
+        los roces del día a día. Hablemos 15 minutos sobre el principal desafío que hoy tiene tu equipo y cómo
+        destrabarlo.
+      </p>
+      <a class="btn btn--light btn--lg" href={links.callout} target="_blank" rel="noopener noreferrer">
+        Agendar llamada breve
+        <Icon name="arrow-right" size="sm" />
+      </a>
+      <p class="cta__email">{email}</p>
+    </div>
+  </section>
+</Layout>
