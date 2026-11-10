@@ -1,19 +1,21 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-const site = process.env.PUBLIC_SITE_URL || undefined;
-
 export default defineConfig({
-  site,
+  site: "https://joriki.martindicovsky.com.ar",
   trailingSlash: "never",
   build: {
     inlineStylesheets: "always",
   },
-  integrations: site
-    ? [
-        sitemap({
-          filter: (page) => !page.includes("404"),
-        }),
-      ]
-    : [],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes("404"),
+      serialize(item) {
+        const path = new URL(item.url).pathname.replace(/\/$/, "") || "/";
+        item.changefreq = "monthly";
+        item.priority = path === "/" ? 1.0 : 0.8;
+        return item;
+      },
+    }),
+  ],
 });
